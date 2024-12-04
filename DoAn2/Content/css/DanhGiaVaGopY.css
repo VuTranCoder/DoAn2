@@ -1,0 +1,141 @@
+@media screen and (min-width:900px){
+    main .tra{
+        padding-left: 50px;
+        padding-right: 50px;
+        border-right: 3px solid var(--mau-vien);
+        border-left: 3px solid var(--mau-vien);
+    }
+}
+@media screen and (max-width: 900px) {
+    main form{
+        width: 100vw;
+    }
+    main .sanpham{
+        display:flex;
+        flex-direction: column;
+    }
+    main .phandanhgia{
+        width:100vw;
+    }
+    main .nhanxet textarea,#ykien textarea{
+        width:80vw;
+    }
+    main .tra{
+        border:none;
+    }
+}
+main{
+    margin-top: 30px;
+}
+main fieldset{
+    margin:20px auto;
+    width:40%;
+}
+main .lienlac,.submit{
+    display:flex;
+    justify-content: center;
+}
+main label{
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid var(--mau-vien);
+    color: var(--mau-nen);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+main #fa-user,#fa-phone{
+    padding-left: 7px;
+}
+main .loinhan{
+    font-size:17px;
+}
+main input{
+    height: 30px;
+    margin:5px;
+    box-sizing: border-box;
+}
+main input:focus{
+    background-color: var(--mau-nen);
+}
+main .submit .button{
+    width:120px;
+    height:30px;
+    margin-bottom: 3px;
+}
+main .sanpham a{
+    font-size:18px;
+}
+main .lienlac a{
+    font-size:13px;
+    color:grey;
+}
+main .sanpham{
+    display:flex;
+    justify-content:center;
+    border-bottom: 3px solid var(--mau-vien);
+}
+main .sanpham p{
+    text-align: center;
+    font-weight:700;
+    font-size: 25px;
+    font-style: oblique;
+    letter-spacing: 5px;
+}
+main .phandanhgia{
+    width:80%;
+}
+main .danhgiasao,.nhanxet{
+   text-align: center;
+   margin:30px;
+}
+main .caphe,.tra,.banh{
+    margin:30px;
+}
+#sanpham1:hover + .anh,#sanpham2:hover + .anh,#sanpham3:hover + .anh,#sanpham4:hover + .anh,
+#sanpham5:hover + .anh,#sanpham6:hover + .anh,#sanpham7:hover + .anh,#sanpham8:hover + .anh,
+#sanpham9:hover + .anh,#sanpham10:hover + .anh,#sanpham11:hover + .anh,#sanpham12:hover + .anh,
+#sanpham13:hover + .anh,#sanpham14:hover + .anh{
+    display:block;
+    animation-name: anh;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1 ;
+}
+@keyframes anh{
+    0%{
+        height:0px;
+    }
+    100%{
+        height:300px;
+    }
+}
+main .anh{
+    display:none;
+    position:absolute;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 1px black;
+}
+main input[type="radio"]{
+    height:12px;
+}
+main input + a{
+    line-height: 35px;
+}
+main .danhgiasao input{
+    margin-bottom: 15px;
+}
+main .sanpham a:hover{
+    color:gray;
+}
+main .lienlac .button{
+    width:150px;
+    height:30px;
+    margin-bottom: 3px;
+    margin-left: 60px;
+    margin-top: 10px;
+}

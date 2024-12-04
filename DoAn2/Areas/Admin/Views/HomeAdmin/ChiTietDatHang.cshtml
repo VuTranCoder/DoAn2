@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Chi tiết đơn đặt hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    decimal totalAmountWithoutShipping = (decimal)ViewBag.TotalAmountWithoutShipping;
+    decimal shippingFee = (decimal)ViewBag.ShippingFee;
+    decimal totalOrderAmount = (decimal)ViewBag.TotalOrderAmount;
+}
+
+<h2>Chi tiết đơn đặt hàng</h2>
+
+<div>
+    <h4>Đơn đặt hàng</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Mã Đơn Hàng</dt>
+        <dd>@Model.MA_DH</dd>
+
+        <dt>Khách hàng</dt>
+        <dd>@Model.KHACH_HANG.TEN_KH</dd>
+
+        <dt>Ngày đặt</dt>
+        <dd>@Model.NGAY_GIODAT</dd>
+
+        <dt>Địa chỉ giao hàng</dt>
+        <dd>@Model.DIACHIGIAOHANG</dd>
+
+        <dt>Phương thức thanh toán</dt>
+        <dd>@Model.PT_THANHTOAN</dd>
+
+        <dt>Trạng thái</dt>
+        <dd>@Model.TRANGTHAI_DH</dd>
+    </dl>
+</div>
+<div>
+    <h4>Chi tiết sản phẩm</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã Sản Phẩm</th>
+                <th>Tên Món</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Tổng Tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CTDHs)
+            {
+                <tr>
+                    <td>@item.MA_SP</td>
+                    <td>@item.TEN_MON</td>
+                    <td>@item.SOLUONG</td>
+                    <td>@String.Format("{0:N0} VND", item.SANPHAM.GIAMON)</td>
+                    <td>@String.Format("{0:N0} VND", (item.SOLUONG ?? 0) * (item.SANPHAM.GIAMON ?? 0))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <h4>Tổng giá trị đơn hàng: @String.Format("{0:N0}", totalAmountWithoutShipping) VND</h4>
+    <h4>Phí ship: @String.Format("{0:N0}", shippingFee) VND</h4>
+    <h4>Tổng tiền đơn hàng: @String.Format("{0:N0}", totalOrderAmount) VND</h4>
+</div>
+
+<p>
+    @Html.ActionLink("Quay lại", "DonDatHang")
+</p>

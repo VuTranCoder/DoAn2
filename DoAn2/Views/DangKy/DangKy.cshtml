@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<main>
+    <link href="~/Content/css/DangKy.css" rel="stylesheet" />
+    <script src="~/Scripts/js/DangKy.js" defer></script>
+    <fieldset>
+        <legend>Sign-Up</legend>
+        <div class="Signup">
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div style="color:red;">@ViewBag.ErrorMessage</div>
+            }
+            <form id="form" onsubmit="return frmValiDate();" action="@Url.Action("DangKy", "DangKy")" method="post">
+
+                <label for="email" class="fa fa-envelope-o label"></label>
+                <input id="email" name="email" type="text" class="input-block" placeholder="Vui lòng nhập Email ">
+                <br>
+
+                <label for="password" class="fa fa-key label"></label>
+                <input id="myInput1" type="password" name="password" class="input-block" placeholder="Vui lòng nhập Mật khẩu ">
+
+
+                <input type="checkbox" onclick="showPassWord1();"><span style="font-size: 0.8em;">Show Password</span>
+                <br>
+                <label for="passworkd" class="fa fa-key label"></label>
+                <input id="myInput2" type="password" name="password" class="input-block" placeholder="Vui lòng nhập lại Mật khẩu ">
+                <br>
+                <label for="diachi" class="fa fa-map-marker label"></label>
+                <input name="diachi" type="text" class="input-block" placeholder="Vui lòng nhập địa chỉ">
+
+                <br>
+                <input type="submit" class="button" href="" value="Đăng Ký">
+                <input type="reset" class="button" href="" value="Reset">
+
+            </form>
+        </div>
+    </fieldset>
+</main>
+

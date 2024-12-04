@@ -1,0 +1,67 @@
+﻿@model DoAn2.Model.SANPHAM
+
+@{
+    ViewBag.Title = "Chi Tiết Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiết Sản Phẩm</h2>
+
+<div>
+    <h4>Sản Phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Sản Phẩm
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MA_SP)
+        </dd>
+        <dt>
+            Mã Loại
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MALOAI)
+        </dd>
+        <dt>Tên Sản Phẩm</dt>
+        <dd>
+            @if (Model.TEN_SP!= null)
+            {
+                @Html.DisplayFor(model => model.TEN_SP)
+            }
+            else
+            {
+                <span class="text-muted">Không có thông tin</span>
+            }
+        </dd>
+
+        <dt>Giá Món</dt>
+        <dd>
+            @if (Model.GIAMON != null)
+            {
+                @Html.DisplayFor(model => model.GIAMON)
+            }
+            else
+            {
+                <span class="text-muted">Không có thông tin</span>
+            }
+        </dd>
+
+        <dt>Hình Ảnh</dt>
+        <dd>
+            @if (Model.HINHANH != null)
+            {
+                <img src="@Url.Content(Model.HINHANH)" alt="Hình ảnh sản phẩm" />
+            }
+            else
+            {
+                <span class="text-muted">Không có hình ảnh</span>
+            }
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Sửa", "SuaSanPham", "HomeAdmin", new { maSanPham = Model.MA_SP }, null) |
+    @Html.ActionLink("Back to List", "DanhMucSanPham")
+</p>

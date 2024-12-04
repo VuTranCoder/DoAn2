@@ -1,0 +1,70 @@
+/* desktop */
+@media screen and (min-width: 900px){
+    article a {
+        width: 80%;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px){
+    article a {
+        width: 100%;
+    }
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+
+article img {
+    width: 100%;
+}
+
+article p{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+
+h1{
+    color: var(--mau-vien);
+    font-size: xx-large;
+}
+
+h2{
+    color: var(--mau-nen);
+}
+h2:hover{
+    color: rgb(185, 123, 0);
+}
+
+.gioithieudau{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gioithieudau ul{
+    list-style-type: square;
+    font-weight: normal;
+    width: 90%;
+}
+
+.imggioithieu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.imggioithieu img{
+    width: 95%;
+}
+
+.tieusu{
+    width: 90%;
+}

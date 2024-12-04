@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DoAn2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CTDH">
+    <Key>
+      <PropertyRef Name="MA_SP" />
+      <PropertyRef Name="MA_DH" />
+    </Key>
+    <Property Name="MA_SP" Type="int" Nullable="false" />
+    <Property Name="MA_DH" Type="int" Nullable="false" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="TEN_MON" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DON_DAT_HANG">
+    <Key>
+      <PropertyRef Name="MA_DH" />
+    </Key>
+    <Property Name="MA_DH" Type="int" Nullable="false" />
+    <Property Name="MA_KH" Type="int" Nullable="false" />
+    <Property Name="MA_NV" Type="int" Nullable="false" />
+    <Property Name="DIACHIGIAOHANG" Type="nvarchar" MaxLength="100" />
+    <Property Name="NGAY_GIODAT" Type="datetime" />
+    <Property Name="TRANGTHAI_DH" Type="nvarchar" MaxLength="50" />
+    <Property Name="PT_THANHTOAN" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShippingFee" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GOP_Y">
+    <Key>
+      <PropertyRef Name="MA_GOPY" />
+    </Key>
+    <Property Name="MA_GOPY" Type="int" Nullable="false" />
+    <Property Name="MA_KH" Type="int" Nullable="false" />
+    <Property Name="NOIDUNG" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="MA_KH" />
+    </Key>
+    <Property Name="MA_KH" Type="int" Nullable="false" />
+    <Property Name="ID_TK" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TEN_KH" Type="nvarchar" MaxLength="100" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+    <Property Name="SDT" Type="int" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LOAI_MONAN">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+    </Key>
+    <Property Name="MALOAI" Type="int" Nullable="false" />
+    <Property Name="TENLOAI" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="MA_NV" />
+    </Key>
+    <Property Name="MA_NV" Type="int" Nullable="false" />
+    <Property Name="ID_TK" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TEN_NV" Type="nvarchar" MaxLength="100" />
+    <Property Name="NGAYSINH" Type="datetime" />
+    <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+    <Property Name="NGAYVAOLAM" Type="datetime" />
+    <Property Name="SDT" Type="int" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MA_SP" />
+    </Key>
+    <Property Name="MA_SP" Type="int" Nullable="false" />
+    <Property Name="MALOAI" Type="int" Nullable="false" />
+    <Property Name="TEN_SP" Type="nvarchar" MaxLength="100" />
+    <Property Name="GIAMON" Type="int" />
+    <Property Name="HINHANH" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TAI_KHOAN">
+    <Key>
+      <PropertyRef Name="ID_TK" />
+    </Key>
+    <Property Name="ID_TK" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TEN_TK" Type="varchar" MaxLength="50" />
+    <Property Name="MK" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_CTDH_RELATIONS_DON_DAT_">
+    <End Role="DON_DAT_HANG" Type="Self.DON_DAT_HANG" Multiplicity="1" />
+    <End Role="CTDH" Type="Self.CTDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DON_DAT_HANG">
+        <PropertyRef Name="MA_DH" />
+      </Principal>
+      <Dependent Role="CTDH">
+        <PropertyRef Name="MA_DH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDH_RELATIONS_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="CTDH" Type="Self.CTDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MA_SP" />
+      </Principal>
+      <Dependent Role="CTDH">
+        <PropertyRef Name="MA_SP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DON_DAT__RELATIONS_KHACH_HA">
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
+    <End Role="DON_DAT_HANG" Type="Self.DON_DAT_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_HANG">
+        <PropertyRef Name="MA_KH" />
+      </Principal>
+      <Dependent Role="DON_DAT_HANG">
+        <PropertyRef Name="MA_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DON_DAT__RELATIONS_NHAN_VIE">
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+    <End Role="DON_DAT_HANG" Type="Self.DON_DAT_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="MA_NV" />
+      </Principal>
+      <Dependent Role="DON_DAT_HANG">
+        <PropertyRef Name="MA_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GOP_Y_RELATIONS_KHACH_HA">
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
+    <End Role="GOP_Y" Type="Self.GOP_Y" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_HANG">
+        <PropertyRef Name="MA_KH" />
+      </Principal>
+      <Dependent Role="GOP_Y">
+        <PropertyRef Name="MA_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACH_HA_RELATIONS_TAI_KHOA">
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="1" />
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAI_KHOAN">
+        <PropertyRef Name="ID_TK" />
+      </Principal>
+      <Dependent Role="KHACH_HANG">
+        <PropertyRef Name="ID_TK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHAN_VIE_RELATIONS_TAI_KHOA">
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="1" />
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAI_KHOAN">
+        <PropertyRef Name="ID_TK" />
+      </Principal>
+      <Dependent Role="NHAN_VIEN">
+        <PropertyRef Name="ID_TK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_RELATIONS_LOAI_MON">
+    <End Role="LOAI_MONAN" Type="Self.LOAI_MONAN" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAI_MONAN">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MALOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DoAn2ModelStoreContainer">
+    <EntitySet Name="CTDH" EntityType="Self.CTDH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DON_DAT_HANG" EntityType="Self.DON_DAT_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GOP_Y" EntityType="Self.GOP_Y" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAI_MONAN" EntityType="Self.LOAI_MONAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAI_KHOAN" EntityType="Self.TAI_KHOAN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CTDH_RELATIONS_DON_DAT_" Association="Self.FK_CTDH_RELATIONS_DON_DAT_">
+      <End Role="DON_DAT_HANG" EntitySet="DON_DAT_HANG" />
+      <End Role="CTDH" EntitySet="CTDH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDH_RELATIONS_SANPHAM" Association="Self.FK_CTDH_RELATIONS_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End Role="CTDH" EntitySet="CTDH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DON_DAT__RELATIONS_KHACH_HA" Association="Self.FK_DON_DAT__RELATIONS_KHACH_HA">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="DON_DAT_HANG" EntitySet="DON_DAT_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DON_DAT__RELATIONS_NHAN_VIE" Association="Self.FK_DON_DAT__RELATIONS_NHAN_VIE">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="DON_DAT_HANG" EntitySet="DON_DAT_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GOP_Y_RELATIONS_KHACH_HA" Association="Self.FK_GOP_Y_RELATIONS_KHACH_HA">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="GOP_Y" EntitySet="GOP_Y" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACH_HA_RELATIONS_TAI_KHOA" Association="Self.FK_KHACH_HA_RELATIONS_TAI_KHOA">
+      <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHAN_VIE_RELATIONS_TAI_KHOA" Association="Self.FK_NHAN_VIE_RELATIONS_TAI_KHOA">
+      <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_RELATIONS_LOAI_MON" Association="Self.FK_SANPHAM_RELATIONS_LOAI_MON">
+      <End Role="LOAI_MONAN" EntitySet="LOAI_MONAN" />
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c0c367420a354586bc965790b4f2295a" Name="Diagram1">
+        <EntityTypeShape EntityType="DoAn2Model.CTDH" Width="1.5" PointX="7.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn2Model.DON_DAT_HANG" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn2Model.GOP_Y" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn2Model.KHACH_HANG" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn2Model.LOAI_MONAN" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn2Model.NHAN_VIEN" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn2Model.SANPHAM" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn2Model.sysdiagram" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn2Model.TAI_KHOAN" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="DoAn2Model.FK_CTDH_RELATIONS_DON_DAT_" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn2Model.FK_CTDH_RELATIONS_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn2Model.FK_DON_DAT__RELATIONS_KHACH_HA" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn2Model.FK_DON_DAT__RELATIONS_NHAN_VIE" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn2Model.FK_GOP_Y_RELATIONS_KHACH_HA" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn2Model.FK_KHACH_HA_RELATIONS_TAI_KHOA" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn2Model.FK_SANPHAM_RELATIONS_LOAI_MON" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn2Model.FK_NHAN_VIE_RELATIONS_TAI_KHOA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

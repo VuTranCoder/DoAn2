@@ -1,0 +1,75 @@
+﻿@model DoAn2.Model.NHAN_VIEN
+
+@{
+    ViewBag.Title = "ChiTietNhanVien";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiết Nhân Viên</h2>
+
+<div>
+    <h4>Nhân Viên</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Nhân Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MA_NV)
+        </dd>
+
+        <dt>
+           ID_TK
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_TK)
+        </dd>
+
+        <dt>
+            Tên Nhân Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TEN_NV)
+        </dd>
+
+        <dt>
+           Ngày Sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYSINH)
+        </dd>
+
+        <dt>
+            Địa Chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            Ngày Vào Làm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYVAOLAM)
+        </dd>
+
+        <dt>
+           Số Điện Thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "SuaNhanVien", new { maNV = Model.MA_NV }) |
+    @Html.ActionLink("Back to List", "DanhMucNhanVien")
+</p>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Quên Mật Khẩu";
+}
+
+<main>
+    <link href="~/Content/css/QuenMatKhau.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/Scripts/js/QuenMatKhau.js"></script>
+    <fieldset>
+        <legend>Quên mật khẩu</legend>
+        <div class="quen">
+            <form id="form" method="post">
+                <label for="email" class="fa fa-envelope-o label"></label>
+                <input id="email" name="email" type="text" class="input-block" placeholder="Vui lòng nhập Email ">
+                <br>
+                <label for="verificationCode" class="fa fa-key label"></label>
+                <input id="verificationCode" type="text" name="verificationCode" class="input-block" placeholder="Nhập mã xác nhận">
+                <br>
+                <label for="password" class="fa fa-key label"></label>
+                <input id="myInput1" type="password" name="password" class="input-block" placeholder="Nhập Mật khẩu mới ">
+                <input type="checkbox" onclick="showPassWord();"><span style="font-size: 0.8em;">Show Password</span>
+                <br>
+                <label for="passworkd" class="fa fa-key label"></label>
+                <input id="myInput2" type="password" name="password" class="input-block" placeholder="Nhập lại mật khẩu ">
+                <br>
+                <input type="button" class="button" value="Gửi Mã Xác Nhận" onclick="sendVerificationCode();" />
+                <input type="reset" class="button" value="Reset" />
+            </form>
+        </div>
+    </fieldset>
+</main>

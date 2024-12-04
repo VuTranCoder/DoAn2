@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <link href="~/Content/css/GioiThieu.css" rel="stylesheet" />
+    <link href="~/Content/css/Nhungsanphamchinh.css" rel="stylesheet" />
+    <article class="articlelon">
+        <article>
+            <h1>Giới Thiệu</h1>
+            <div class="gioithieudau">
+                <div class="imggioithieu">
+                    <img src="~/Content/Data/HinhAnh/gioithieu/Đầu giới thiệu.jpg" alt="Hình giới thiệu">
+                </div>
+
+                <ul>
+                    <li>
+                        Chào mừng đến với quán ăn của chúng tôi, nơi bạn có thể thưởng thức hương vị đặc trưng của cơm heo quay và những món cơm đa dạng khác.
+                        Với sự kết hợp tinh tế giữa cơm trắng mềm mịn và miếng thịt heo quay giòn tan, món cơm heo quay của chúng tôi không chỉ là một
+                        lựa chọn ngon miệng mà còn là một trải nghiệm ẩm thực độc đáo.
+                    </li>
+                    <li>
+                        Ngoài ra, quán cũng cung cấp nhiều loại cơm khác nhau để đáp ứng sở thích của mọi thực khách. Từ cơm rang, cơm chiên, đến cơm hấp và cơm xôi,
+                        chúng tôi cam kết mang đến cho bạn những phong vị đa dạng và đầy hấp dẫn. Mỗi dĩa cơm tại quán đều được chế biến từ nguyên liệu tươi ngon,
+                        được chuẩn bị với tình yêu và tâm huyết từ đội ngũ đầu bếp tài năng của chúng tôi.
+                    </li>
+                    <li>
+                        Dù bạn đang tìm kiếm một bữa trưa nhanh gọn hoặc muốn thưởng thức một bữa tối ấm cúng cùng gia đình và bạn bè,
+                        quán ăn của chúng tôi luôn sẵn lòng chào đón bạn với những món cơm đậm đà và ngon lành.
+                        Hãy ghé thăm chúng tôi và khám phá thế giới ẩm thực phong phú tại địa chỉ này!
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article class="articlesanpham">
+            <h1>Những sản phẩm chính:</h1>
+            <section>
+                <a href="@Url.Action("SanPham","SanPham")">
+                    <h2>Cơm Heo Quay</h2>
+                </a>
+                <div class="imgsanpham">
+                    <img src="~/Content/Data/HinhAnh/gioithieu/HeoQuay.png" alt="Hình cơm heo quay">
+                    <p>
+                        Cơm heo quay - một biểu tượng của ẩm thực truyền thống - đã trở thành một phần không thể thiếu trong thực đơn của nhiều
+                        người yêu ẩm thực. Tại quán của chúng tôi,
+                        chúng tôi tự hào giới thiệu những món cơm độc đáo được chế biến từ heo quay, mang đến hương vị đặc trưng và hấp dẫn.
+                        <br>
+                        <br>
+                        Cơm chiên heo quay là một trong những món ưa thích tại quán của chúng tôi. Miếng thịt heo quay giòn rụm được kết hợp cùng cơm chiên và các loại rau củ tươi ngon, tạo nên một bữa ăn thơm ngon và bổ dưỡng.
+                        Cơm heo quay dưa cải cũng là một lựa chọn phổ biến,
+                        với vị ngọt tự nhiên của dưa cải kết hợp với thịt heo quay thơm lừng, tạo nên một hòa quện hài hòa của các hương vị.
+                        Ngoài ra, chúng tôi còn phục vụ cơm xá xíu, một phiên bản sáng tạo kết hợp giữa thịt xá xíu và cơm trắng, tạo nên một món ăn đặc biệt và hấp dẫn. Sự kết hợp tinh tế giữa vị ngọt của xá xíu và hương vị đậm đà của cơm heo quay sẽ chinh phục cả những thực khách khó tính nhất.
+                        Với sự kỳ công và tâm huyết trong quá trình chế biến, chúng tôi cam kết mang đến cho quý khách
+                        hàng những trải nghiệm ẩm thực đầy hấp dẫn và thú vị tại quán. Hãy đến và thưởng thức những món cơm độc đáo này
+                        tại địa chỉ của chúng tôi, nơi bạn sẽ khám phá ra vô vàn hương vị mới mẻ và đặc sắc.
+                        <a href="@Url.Action("SanPham","SanPham")">Xem các sản phẩm về cơm heo quay</a>
+                    </p>
+                </div>
+            </section>
+            <section>
+                <a href="@Url.Action("SanPham","SanPham")">
+                    <h2>Cơm Bò</h2>
+                </a>
+                <div class="imgsanpham">
+                    <img src="~/Content/Data/HinhAnh/gioithieu/Bò.png" alt="Hình cơm bò">
+                    <p>
+                        Ngoài các món cơm được chế biến từ heo quay, tại quán ẩm thực của chúng tôi, chúng tôi còn mang đến những món cơm hấp dẫn được chế biến từ thịt bò tươi ngon,
+                        tạo nên những trải nghiệm ẩm thực độc đáo và đầy hấp dẫn.
+                        <br>
+                        <br>
+                        Một trong những món ưa thích của khách hàng là cơm bò xào bông hẹ. Miếng thịt bò thơm ngon và béo ngậy được xào chín cùng với bông hẹ giòn rụm,
+                        tạo nên một hòa quện hài hòa của vị ngọt tự nhiên và vị đậm đà của thịt bò.
+                        vị đậm đà và độc đáo, cơm bò sốt tiêu đen chính là lựa chọn hoàn hảo. Miếng thịt bò mềm mịn được ướp sốt tiêu đen đặc trưng,
+                        tạo nên một món cơm đậm đà và đầy hấp dẫn, kết hợp hoàn hảo với cơm trắng mềm mịn.
+                        <br>
+                        Hãy đến với quán ẩm thực của chúng tôi và khám phá những món cơm độc đáo được chế biến từ thịt bò,
+                        nơi bạn sẽ tận hưởng những trải nghiệm ẩm thực đặc sắc và đầy hấp dẫn. <a href=""@Url.Action("SanPham","SanPham")"">
+                            Xem
+                            các sản phẩm từ thịt bò
+                        </a>
+                    </p>
+                </div>
+            </section>
+            <section>
+                <a href="@Url.Action("SanPham","SanPham")">
+                    <h2>Món Phụ</h2>
+                </a>
+                <div class="imgsanpham">
+                    <img src="~/Content/Data/HinhAnh/gioithieu/canhrongbien.png" alt="Hình canh rong biển">
+                    <p>
+                        Song song với các món ăn thơm ngon chúng tôi cũng dành cho bạn những sự lựa chọn hấp dẫn
+                        từ
+                        các món phụ tại quán ẩm thực của chúng tôi. Không chỉ là điểm nhấn thú vị trong bữa ăn mà còn
+                        là điểm nhấn của hương vị và sự đa dạng trong thực đơn.
+                        <br>
+                        <br>
+                        Một trong những món phụ được yêu thích nhất là canh cải ngọt thịt bằm. Canh này kết hợp hài hòa giữa vị ngọt tự nhiên của cải ngọt, độ đậm đà của thịt bằm và hương thơm của các gia vị, tạo nên một món canh đậm đà và bổ dưỡng,
+                        phù hợp để bổ sung dinh dưỡng trong bữa ăn hàng ngày.
+                        Nếu bạn muốn khám phá hương vị đặc trưng của biển cả, canh rong biển là sự lựa chọn hoàn hảo. Canh này sử dụng rong biển tươi ngon kết hợp với các loại hải sản và gia vị, tạo nên một hương vị độc đáo, dồi dào khoáng chất và chất dinh dưỡng.
+                        Trứng quậy là một món phụ đơn giản nhưng không kém phần hấp dẫn. Trứng được khuấy đều và chiên giòn, sau đó chế biến cùng với các loại gia vị như hành, tỏi, tiêu... tạo nên một món trứng thơm ngon, giòn tan, và đầy dinh dưỡng, là sự bổ sung tuyệt vời cho bữa ăn hàng ngày.
+                        Tại quán của chúng tôi, chúng tôi cam kết mang đến cho thực khách những món phụ đa dạng, ngon miệng và bổ dưỡng, tạo nên những trải nghiệm ẩm thực đặc sắc và đáng nhớ. Hãy đến và thưởng thức các món phụ này cùng với các món chính tại quán của chúng tôi để tận hưởng một bữa ăn hoàn hảo và đầy đủ dinh dưỡng. <a href="@Url.Action("SanPham","SanPham")">Xem các sản phẩm món phụ </a>
+                    </p>
+                </div>
+            </section>
+        </article>
+        <article class="tieusu">
+            <h1>Tiểu sử của chúng tôi</h1>
+            <section>
+                <p>
+                    Quán ăn của chúng tôi không chỉ là nơi thưởng thức ẩm thực mà còn là một câu chuyện về sự đam mê và tinh thần sáng tạo.
+                    Lấy cảm hứng từ những tiệm cơm heo quay truyền thống khác,
+                    chúng tôi đã bắt đầu hành trình của mình với niềm đam mê về ẩm thực và mong muốn mang lại cho khách hàng những trải nghiệm ẩm thực đặc biệt.
+                    <br>
+                    Từ việc học hỏi và nghiên cứu, chúng tôi đã phát triển thực đơn đa dạng, bao gồm cả các món cơm được chế biến từ heo quay và nhiều loại nguyên liệu khác. Bằng sự tận tụy và sự sáng tạo, chúng tôi đã tạo ra những món ăn đậm đà, ngon miệng và độc đáo,
+                    mang lại niềm hứng thú cho thực khách và giữ vững được vị thế trong lòng đam mê ẩm thực của mọi người.
+                    Quán ăn của chúng tôi không chỉ là nơi thưởng thức ẩm thực mà còn là một điểm hẹn đầy ý nghĩa, nơi mọi
+                    người có thể tận hưởng không chỉ những món ăn ngon mà còn là không khí ấm áp và phong cách phục vụ tận tình. Đó chính là những giá trị mà chúng tôi hướng đến và luôn nỗ lực duy trì trong mỗi bữa ăn.
+                </p>
+            </section>
+        </article>
+    </article>
+</main>
+
+

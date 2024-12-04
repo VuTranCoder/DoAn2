@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Thống kê Sản phẩm bán chạy";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Thống kê Sản phẩm bán chạy</h2>
+<div id="chartContainerSanPham" style="height: 370px; width: 100%;"></div>
+@section scripts {
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+        window.onload = function () {
+            var dataPoints = @Html.Raw(ViewBag.SanPhamBanChay);
+            var chart = new CanvasJS.Chart("chartContainerSanPham", {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Sản phẩm bán chạy"
+                },
+                axisY: {
+                    title: "Số lượng bán"
+                },
+                data: [{
+                    type: "column",
+                    yValueFormatString: "#,##0.##",
+                    dataPoints: dataPoints.map(item => ({ label: item.SanPham, y: item.SoLuongBan }))
+                }]
+            });
+            chart.render();
+        }
+    </script>
+}

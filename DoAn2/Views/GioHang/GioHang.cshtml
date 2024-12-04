@@ -1,0 +1,125 @@
+﻿@model List<DoAn2.Controllers.CartItem>
+@{
+    ViewBag.Title = "Giỏ Hàng";
+    var totalValue = ViewBag.TotalValue != null ? (decimal)ViewBag.TotalValue : 0;
+    var shippingFee = ViewBag.ShippingFee != null ? (decimal)ViewBag.ShippingFee : 0;
+    var totalOrderAmount = ViewBag.TotalOrderAmount != null ? (decimal)ViewBag.TotalOrderAmount : 0;
+    var message = TempData["Message"] != null ? TempData["Message"].ToString() : null;
+    var deliveryTime = TempData["DeliveryTime"] != null ? (DateTime)TempData["DeliveryTime"] : (DateTime?)null;
+    var customerName = ViewBag.CustomerName != null ? ViewBag.CustomerName.ToString() : string.Empty;
+    var phoneNumber = ViewBag.PhoneNumber != null ? ViewBag.PhoneNumber.ToString() : string.Empty;
+    var address = ViewBag.Address != null ? ViewBag.Address.ToString() : string.Empty;
+}
+<main>
+    <link href="~/Content/css/GioHang.css" rel="stylesheet" />
+    <article>
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="alert alert-success">
+                @message
+                @if (deliveryTime.HasValue)
+                {
+                    <p>Đơn hàng sẽ được giao đến bạn vào lúc: @deliveryTime.Value.ToString("dd/MM/yyyy HH:mm")</p>
+                }
+            </div>
+        }
+
+        <table id="receipt">
+            <thead id="head-receipt">
+                <tr>
+                    <th id="table-id"> STT </th>
+                    <th id="table-name"> Tên Sản Phẩm </th>
+                    <th id="table-quanlity"> Số Lượng </th>
+                    <th id="table-price"> Giá </th>
+                    <th id="table-total"> Tổng tiền </th>
+                </tr>
+            </thead>
+
+            <tbody id="body-receipt">
+                @if (Model != null && Model.Count > 0)
+                {
+                    int stt = 1;
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@stt</td>
+                            <td>@item.ProductName</td>
+                            <td>
+                                <form action="@Url.Action("DecreaseQuantity", "GioHang")" method="post" style="display:inline-block;">
+                                    <input type="hidden" name="productName" value="@item.ProductName" />
+                                    <button type="submit">-</button>
+                                </form>
+                                @item.Quantity
+                                <form action="@Url.Action("IncreaseQuantity", "GioHang")" method="post" style="display:inline-block;">
+                                    <input type="hidden" name="productName" value="@item.ProductName" />
+                                    <button type="submit">+</button>
+                                </form>
+                            </td>
+                            <td>@String.Format("{0:N0} VND", item.Price)</td>
+                            <td>@String.Format("{0:N0} VND", item.Total)</td>
+                        </tr>
+                        stt++;
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" style="text-align: center;">Giỏ hàng trống</td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot id="total-receipt">
+                <tr>
+                    <td colspan="4">Tổng giá trị đơn hàng:</td>
+                    <td>@totalValue.ToString("N0") VND</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Phí ship:</td>
+                    <td>@shippingFee.ToString("N0") VND</td>
+                </tr>
+                <tr>
+                    <td colspan="4">Tổng tiền đơn hàng:</td>
+                    <td>@totalOrderAmount.ToString("N0") VND</td>
+                </tr>
+                <tr id="voucher-receipt">
+                    <td colspan="4">Voucher</td>
+                    <td id="voucher-input-holder">
+                        <input type="text" name="voucher" id="voucher-input" placeholder="Nhập voucher">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </article>
+
+    <article>
+        <form action="@Url.Action("DatHang", "GioHang")" id="xac-nhan-dat-hang" method="post">
+            <a href="@Url.Action("SanPham","SanPham")" class="more-products button">
+                <span> Mua thêm sản phẩm </span>
+            </a>
+            <div class="form-group">
+                <label for="customerName">Tên khách hàng:</label>
+                <input type="text" name="customerName" id="customerName" value="@customerName" required />
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Số điện thoại:</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" value="@phoneNumber" required />
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" name="address" id="address" value="@address" required />
+            </div>
+            <div class="button-holder">
+                <button type="submit" class="button">Đặt hàng</button>
+            </div>
+        </form>
+    </article>
+    <div class="danh-gia-san-pham">
+        <a href="@Url.Action("DanhGiavaGopY", "DanhGiavaGopY")" class="danh-gia">
+            <h4>Đánh giá sản phẩm của chúng tôi</h4>
+            <p>
+                Sản phẩm của chúng tôi có làm cho bạn hài lòng, Chúng tôi rất vui lòng để lắng nghe ý kiến đóng góp của bạn.
+            </p>
+        </a>
+    </div>
+</main>

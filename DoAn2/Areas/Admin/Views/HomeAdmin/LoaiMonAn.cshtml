@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DoAn2.Model.LOAI_MONAN>
+
+@{
+    ViewBag.Title = "Danh Sách Loại Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh Sách Loại Sản Phẩm</h2>
+<p>
+    @Html.ActionLink("Create New", "ThemLoaiSanPham")
+</p>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<table class="table">
+    <tr class="table-warning">
+        <th>Mã Loại</th>
+        <th>Tên Loại</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="table-success">
+        <td>
+            @Html.DisplayFor(modelItem => item.MALOAI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENLOAI)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaLoaiSanPham", "HomeAdmin", new { maLoai = item.MALOAI}, null) |
+            @Html.ActionLink("Chi tiết", "ChiTietLoaiSanPham", "HomeAdmin", new { maLoai = item.MALOAI }, null) |
+            @using (Html.BeginForm("XoaLoaiSanPham", "HomeAdmin", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("maLoai", item.MALOAI)
+                <input type="submit" value="Xóa" class="btn btn-danger" onclick="return confirm('Bạn Có Muốn Xóa Loại Sản Phẩm Này Không?');" />
+            }
+        </td>
+    </tr>
+}
+
+</table>

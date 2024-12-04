@@ -1,0 +1,53 @@
+main{
+    margin-top: 30px;
+}
+
+fieldset {
+    width: 40%;
+    margin: 20px auto;
+
+    border: 1px solid var(--mau-vien);
+}
+#quen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.label {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+
+    margin: 5px;
+    border: solid 1px var(--mau-vien);
+    box-sizing: border-box;
+
+    color: var(--mau-nen);
+}
+
+.input-block {
+    height: 30px;
+
+    margin: 5px;
+    border: solid 1px var(--mau-vien);
+    box-sizing: border-box;
+
+    color: var(--mau-nen);
+}
+.input-block:focus {
+    border: solid 1px var(--mau-vien);
+    
+    color: var(--mau-chu);
+    background-color: var(--mau-nen);
+}
+#quen .button {
+    width: 120px;
+    height: 30px;
+
+    display:inline-flex ;
+    margin: 10px;
+}

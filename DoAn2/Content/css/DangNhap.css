@@ -1,0 +1,109 @@
+main{
+    margin-top: 30px;
+}
+
+fieldset {
+    width: 40%;
+    margin: 20px auto;
+
+    border: 1px solid var(--mau-vien);
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* legend{
+    width: fit-content;
+
+    position: relative;
+    top: 20px;
+    left:40%;
+    transform: rotateX(-60%);
+
+    margin: 12px 0px 16px;
+
+    color: #000000;
+
+    font-family: "Open Sans","sans-serif";
+    font-size: 28px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    line-height: 34px;
+}
+legend::after{
+    content: "";
+
+    height: 3px;
+    width: 100%;
+
+    transform: rotateX(-12deg);
+
+    display: block;
+    margin: 12px 0px 16px;
+    background-image: radial-gradient(#808080,#fff);
+
+}*/
+
+/* .login{
+    width:35%;
+    margin:auto;
+} */
+
+.label {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+
+    margin: 5px;
+    border: solid 1px var(--mau-vien);
+    box-sizing: border-box;
+
+    color: var(--mau-nen);
+}
+.account{
+    height: 30px;
+
+
+}
+.input-block {
+    height: 30px;
+
+    margin: 5px;
+    border: solid 1px var(--mau-vien);
+    box-sizing: border-box;
+
+    color: var(--mau-nen);
+}
+.input-block:focus {
+    border: solid 1px var(--mau-vien);
+    
+    color: var(--mau-chu);
+    background-color: var(--mau-nen);
+}
+
+.quen-mat-khau {
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+#login .button {
+    width: 120px;
+    height: 30px;
+
+    float: left;
+
+    margin: 10px;
+}
+#chua-co-tk{
+    font-size: 0.8em;
+    font-weight: 100;
+    right:100px;
+}

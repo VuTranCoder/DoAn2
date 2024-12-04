@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+<main>
+    <script src="~/Scripts/js/DanhGiaVaGopY.js"></script>
+    <link href="~/Content/css/DanhGiaVaGopY.css" rel="stylesheet" />
+    <form action="@Url.Action("GopY", "HomeAdmin", new { area = "admin" })" method="post" name="danhgiavagopy" onsubmit="return kiemtra();">
+        <fieldset>
+            <legend>Thông Tin Liên Lạc</legend>
+            <div class="lienlac">
+                <div>
+                    <label id="fa-user" for="ten" class="fa fa-user label"></label>
+                    <input name="ten" type="text" placeholder="Vui lòng nhập họ và tên" maxlength="30">
+                    <br>
+                    <label for="email" class="fa fa-envelope label"></label>
+                    <input name="email" type="text" placeholder="Vui lòng nhập email" id="email" maxlength="30">
+                    <br>
+                    <label for="password" class="fa fa-key label"></label>
+                    <input name="password" type="password" placeholder="Vui lòng nhập mật khẩu" maxlength="30">
+                    <a>(nếu có tài khoản)</a>
+                    <br>
+                    <label id="fa-phone" for="dienthoai" class="fa fa-phone label"></label>
+                    <input name="dienthoai" type="tel" placeholder="Vui lòng nhập số điện thoại" id="dienthoai">
+                    <br>
+                    <input class="button" onclick="kiemtrathongtin();" type="button" value="Kiểm tra thông tin"></input>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="phandanhgia">
+            <legend>Đánh Giá Sản Phẩm</legend>
+            <ul>
+                <li>
+                    <p class="loinhan">Chọn sản phẩm</p>
+                </li>
+            </ul>
+            <div class="sanpham">
+                <div class="comheoquay">
+                    <p><ins>Cơm Heo Quay</ins></p>
+                    <input name="sanpham" type="radio" value="Cơm Heo Quay">
+                    <a id="sanpham1">Cơm Heo Quay</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/Cơm Heo Quay.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Cơm Chiên Heo Quay">
+                    <a id="sanpham2">Cơm Chiên Heo Quay</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/Cơm Chiên Heo Quay.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Cơm Heo Quay Dưa Cải">
+                    <a id="sanpham3">Cơm Heo Quay Dưa Cải</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/HeoQuayDuaCai.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Cơm Xá Xíu Thập Tam Nương">
+                    <a id="sanpham4">Cơm Xá Xíu Thập Tam Nương</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/xá xíu thập nương.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Cơm Gà Kho Gừng">
+                    <a id="sanpham5">Cơm Gà Kho Gừng</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/cơm gà kho gừng.jpg" width="300" height="300">
+                </div>
+                <div class="combo">
+                    <p><ins>Cơm Bò</ins></p>
+                    <input name="sanpham" type="radio" value="Cơm Bò Sốt Tiêu Đen">
+                    <a id="sanpham6">Cơm Bò Sốt Tiêu Đen</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/bò sốt tiêu đen.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Cơm Bò Xào Bông Hẹ">
+                    <a id="sanpham7">Cơm Bò Xào Bông Hẹ</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/bò xào bông hẹ.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Cơm Bò Xào Đậu Rồng">
+                    <a id="sanpham8">Cơm Bò Xào Đậu Rồng</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/bò xào đậu rồng.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Cơm Bò Xào Khổ Qua">
+                    <a id="sanpham9">Cơm Bò Xào Khổ Qua</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/bò xào khổ qua.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Cơm Bò Xào Ớt Chuông">
+                    <a id="sanpham10">Cơm Bò Xào Ớt Chuông</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/bò xào ớt chuông.jpg" width="300" height="300">
+                </div>
+                <div class="monphu">
+                    <p><ins>Món Phụ</ins></p>
+                    <input name="sanpham" type="radio" value="Canh Cải Ngọt Thịt">
+                    <a id="sanpham11">Canh Cải Ngọt Thịt</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/canh cải ngọt thịt.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Canh Rong Biển Thịt">
+                    <a id="sanpham12">Canh Rong Biển Thịt</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/canh rong biển thịt.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Khổ Qua Xào Trứng">
+                    <a id="sanpham13">Khổ Qua Xào Trứng</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/trứng xào khổ qua.jpg" width="300" height="300">
+                    <br>
+                    <input name="sanpham" type="radio" value="Trứng Quậy">
+                    <a id="sanpham14">Trứng Quậy</a>
+                    <img class="anh" src="~/Content/Data/HinhAnh/SanPham/trứng quậy.jpg" width="300" height="300">
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <p class="loinhan">Đánh giá của bạn</p>
+                </li>
+            </ul>
+            <div class="danhgiasao">
+                <input name="danhgia" type="radio" value="1"><a class="fa fa-star label"></a>
+                <br>
+                <input name="danhgia" type="radio" value="2"><a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <br>
+                <input name="danhgia" type="radio" value="3"><a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <br>
+                <input name="danhgia" type="radio" value="4"><a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <br>
+                <input name="danhgia" type="radio" value="5"><a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+                <a class="fa fa-star label"></a>
+            </div>
+            <ul>
+                <li>
+                    <p class="loinhan">Hãy chia sẻ nhận xét của bạn về sản phẩm</p>
+                </li>
+            </ul>
+            <div class="nhanxet">
+                <textarea cols="80" rows="3" placeholder="Cảm nhận của bạn về sản phẩm" maxlength="500" id="textnhanxet"></textarea>
+            </div>
+        </fieldset>
+        <ul>
+            <li>
+                <p class="loinhan">
+                    <ins>
+                        <em>
+                            Bạn hãy để lại ý kiến đóng góp để chúng tôi cải thiện sản phẩm và
+                            chất lượng dịch vụ ngày càng tốt hơn.<strong> XIN CẢM ƠN!</strong>
+                        </em>
+                    </ins>
+                </p>
+            </li>
+        </ul>
+        <fieldset>
+            <legend>Ý Kiến Đóng Góp</legend>
+            <div id="ykien">
+                <textarea cols="100" rows="10" placeholder="Vui lòng nhập ý kiến của bạn" maxlength="1500" id="textykien"></textarea>
+            </div>
+        </fieldset>
+    </form>
+    <div class="submit">
+        <input type="submit" value="Gửi" class="button" onclick="submit();">
+    </div>
+</main>
+
+

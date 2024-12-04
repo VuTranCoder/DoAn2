@@ -1,0 +1,38 @@
+/* desktop */
+@media screen and (min-width: 900px) {
+    main {
+        grid-template-areas: 
+            "article-cell aside-sell"
+        ;
+    }
+    article {
+        width: 75vw;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+    main {
+        grid-template-areas: 
+            "article-cell"
+            "aside-sell"
+        ;
+    }
+}
+
+main {
+    display: grid;
+}
+
+article {
+    grid-area: article-cell;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+aside {
+    grid-area: aside-cell;
+}

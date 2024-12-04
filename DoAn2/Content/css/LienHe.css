@@ -1,0 +1,66 @@
+@media screen and (max-width: 900px){
+   .thoigian{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+   }
+}
+main form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .nam,.thang,.ngay{
+    margin-top: 30px;
+}
+main .thongtinlienhe{
+    margin:20px auto;
+    width:40%;
+}
+main #nam{
+    background-color: var(--mau-nen);
+    color:aliceblue;
+}
+main #ipnam,#ipthang,#ipngay{
+    display:none;
+}
+main .thoigian{
+    display:flex;
+    align-items: center;
+    margin:20px auto;
+    width:30%;
+    justify-content:space-between ;
+}
+main .hen{
+    margin:20px auto;
+    width:80%;
+}
+main .nam,.ngay,.thang{
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--mau-nen);
+}
+main .submit{
+    margin-top: 20px;
+}
+main .ngay button{
+    width:50px;
+    margin-top: 5px;
+}
+main .thang button,.nam button,.ngay button,.nam input{
+    height:30px;
+}
+main .chonngay{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .submit .button{
+    width:120px;
+    height:30px;
+}
+main .hen li{
+    font-size: 17px;
+}
+main .thoigian p,.loinhan,.thongtinlienhe li{
+    font-size: 18px;
+}

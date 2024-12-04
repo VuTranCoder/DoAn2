@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Thống kê Doanh thu theo Năm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Thống kê Doanh thu theo Năm</h2>
+<div id="chartContainerNam" style="height: 370px; width: 100%;"></div>
+@section scripts {
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+        window.onload = function () {
+            var dataPoints = @Html.Raw(ViewBag.DoanhThuNam);
+            var chart = new CanvasJS.Chart("chartContainerNam", {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Doanh thu theo Năm"
+                },
+                axisY: {
+                    title: "Doanh thu (VND)"
+                },
+                data: [{
+                    type: "column",
+                    yValueFormatString: "#,##0.## VND",
+                    dataPoints: dataPoints.map(item => ({ label: item.Nam.toString(), y: item.TongDoanhThu }))
+                }]
+            });
+            chart.render();
+        }
+    </script>
+}

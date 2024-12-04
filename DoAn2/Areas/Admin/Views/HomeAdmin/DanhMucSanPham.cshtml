@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DoAn2.Model.SANPHAM>
+
+@{
+    ViewBag.Title = "Danh Mục Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh Mục Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ThemSanPhamMoi")
+</p>
+<table class="table">
+    <tr class="table-warning">
+        <th>
+            Mã Sản Phẩm
+        </th>
+        <th>
+            Mã Loại
+        </th>
+        <th>
+            Tên Sản Phẩm
+        </th>
+        <th>
+            Giá Món
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="table-success">
+            <td>
+                @Html.DisplayFor(modelItem => item.MA_SP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MALOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TEN_SP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIAMON)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "SuaSanPham", new { maSanPham = item.MA_SP }) |
+                @Html.ActionLink("Chi tiết", "ChiTietSanPham", "HomeAdmin", new { id = item.MA_SP }, null) |
+                @using (Html.BeginForm("XoaSanPham", "HomeAdmin", FormMethod.Post, new { @class = "form-inline" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("maSanPham", item.MA_SP)
+                    <input type="submit" value="Xóa" class="btn btn-danger" />
+                }
+            </td>
+        </tr>
+    }
+
+</table>

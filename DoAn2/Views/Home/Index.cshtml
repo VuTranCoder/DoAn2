@@ -1,0 +1,154 @@
+﻿@{ 
+    ViewBag.Title = "Home Page";
+        }
+<main>
+    <link rel="stylesheet" href="~/Content/css/TrangChu.css">
+    <link rel="stylesheet" href="~/Content/css/TrangChu_SanPhamChinh.css">
+    <link rel="stylesheet" href="~/Content/css/TrangChu_Menu.css">
+    <link rel="stylesheet" href="~/Content/css/TrangChu_SanPhamNoiBat.css">
+    <script src="~/Scripts/js/TrangChu.js" defer></script>
+    <aside></aside>
+
+    <article>
+        <div class="san-pham-chinh">
+            <div class="nut-chuyen-anh">
+                <a id="nut-chuyen-trai" class="button">
+                    <span class="fa fa-chevron-left"></span>
+                </a>
+                <a id="nut-chuyen-phai" class="button">
+                    <span class="fa fa-chevron-right"></span>
+                </a>
+            </div>
+            <ul div id="carousel" class="anh-minh-hoa">
+                <li class="anh-lien-ket">
+                    <a href="@Url.Action("GioiThieu","GioiThieu")">
+                        <h1 class="title-text" style="top: 20%; left: 20%; width: 40%; font-size: xx-large; transform:scale(1.7); ">
+                            Chào mừng đến với Cơm Nhà Vũ Tuấn
+                        </h1>
+                        <h1 class="title-text border-left" style="bottom: 15%; left: 5%; width: 50%;">
+                            Nơi bạn có thể tìm được những món ăn thơm ngon
+                        </h1>
+                        <img src="~/Content/Data/HinhAnh/trangchu/ảnh 1.png" alt="backgroud-img">
+                    </a>
+                </li>
+                <li class="anh-lien-ket">
+                    <a href="@Url.Action("SanPham","SanPham")">
+                        <h1 class="title-text border-left" style="top: 8%; left: 8%; width: 22%;">
+                            Ở đây, chúng tôi sẽ cung cấp cho bạn nhiều loại thức ăn độc đáo
+                        </h1>
+                        <h1 class="title-text border-right" style="bottom: 5%; right: 10%; width: 60%;">
+                            Và cả nhiều loại canh ngon nữa
+                        </h1>
+                        <img src="~/Content/Data/HinhAnh/trangchu/ảnh2.png" alt="bò-img">
+                    </a>
+                </li>
+                <li class="anh-lien-ket">
+                    <a href="@Url.Action("TinTuc","TinTuc")">
+                        <h1 class="title-text border-right" style="top: 10%; left: 10%; width: 50%;">
+                            Chúng tôi có nhiều tin tức thú vị về món ăn
+                        </h1>
+                        <h1 class="title-text border-left" style="bottom: 30%; left: 8%; width: 22%;">
+                            Và về những chương trình đặc biệt chúng tôi
+                        </h1>
+                        <img src="~/Content/Data/HinhAnh/trangchu/ảnh3.png" alt="gà-img">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article>
+        <div class="menu">
+            <a class="anh-lien-ket">
+                <img src="~/Content/Data/HinhAnh/Cơm Nhà Vũ Tuấn.jpg" alt="menu-img">
+            </a>
+
+            <div class="van-ban">
+                <h3>
+                    <span>Menu</span>
+                </h3>
+                <p>
+                    Chúng tôi có nhiều lựa chọn phù hợp với sở thích và tâm trạng của bạn, từ Heo quay và Bò
+                    cổ điển. <br> Cơm heo quay là một món ăn truyền thống với hương vị đặc trưng và hấp dẫn. Món này thường bao gồm những miếng thịt heo quay giòn rụm, cùng với cơm trắng hấp dẫn. Heo quay cung cấp protein và chất béo từ thịt, trong khi cơm cung cấp năng lượng từ gạo. Một số quán có thể phục vụ cơm heo quay kèm theo rau củ và nước sốt hoặc mùi vị đặc biệt để làm tăng thêm hương vị. <br>
+                    Cơm bò là một món ăn phổ biến, thường bao gồm thịt bò được xào hoặc nấu sốt kèm với cơm trắng. Thịt bò cung cấp protein và chất béo, trong khi cơm cung cấp năng lượng từ gạo. Món này có thể được kết hợp với nhiều loại rau củ và gia vị khác nhau tùy theo khẩu vị và phong cách nấu ăn của mỗi quán. <br>
+                    Canh là một món phụ truyền thống trong bữa ăn Việt Nam. Có nhiều loại canh khác nhau như canh rong biển, canh cải ngọt và nhiều loại canh khác. Canh cung cấp nhiều dưỡng chất từ rau củ và thịt, đồng thời thêm vị ngon và hương vị đặc trưng cho bữa ăn.
+                </p>
+                <div class="lien-ket">
+                    <a href="@Url.Action("SanPham","SanPham")">
+                        Xem ngay!
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+
+    <article>
+        <div class="san-pham-noi-bac">
+            <h1 class="tieu-de">
+                <span>Những sản phẩm nổi bật</span>
+            </h1>
+            <div class="cac-san-pham">
+                <a href="@Url.Action("ComHeoQuay","TungLoaiSanPham")" class="san-pham" title="Xem Thêm">
+                    <img src="~/Content/Data/HinhAnh/SanPham/Cơm Heo Quay.jpg" alt="Cơm Heo Quay-img">
+                    <h3>
+                        <span>Cơm Heo Quay</span>
+                    </h3>
+                    <p>
+
+                        Cơm heo quay ngon và bổ dưỡng, với protein và chất béo từ heo quay, năng lượng từ gạo. Kết hợp với rau củ và gia vị, tạo ra bữa ăn đa dạng và cung cấp dưỡng chất cho cơ thể.
+                    </p>
+                </a>
+
+                <a href="@Url.Action("ComChienHeoQuay","TungLoaiSanPham")" class="san-pham" title="Xem Thêm">
+                    <img src="~/Content/Data/HinhAnh/SanPham/Cơm Chiên Heo Quay.jpg" alt="ComChienHeoQuay-img">
+                    <h3>
+                        <span>Cơm Chiên Heo Quay</span>
+                    </h3>
+                    <p>
+                        Cơm chiên heo quay là một món ăn ngon và bổ dưỡng. Cơm cung cấp năng lượng và các dưỡng chất từ gạo, trong khi heo quay cung cấp protein và chất béo. Món này cũng chứa rau củ và trứng,
+                        tạo ra một bữa ăn đa dạng và cung cấp các dưỡng chất cần thiết cho cơ thể.
+                    </p>
+                </a>
+
+                <a href="@Url.Action("BoSotTieuDen","TungLoaiSanPham")" class="san-pham"
+                   title="Xem Thêm">
+                    <img src="~/Content/Data/HinhAnh/SanPham/bò sốt tiêu đen.jpg" alt="BoSotTieuDen-img">
+                    <h3>
+                        <span>Cơm Bò Sốt Tiêu Đen</span>
+                    </h3>
+                    <p>
+                        Món bò sốt tiêu đen ngon và bổ dưỡng. Thịt bò cung cấp protein, rau củ và gia vị giàu dinh dưỡng. Tỏi và tiêu đen hỗ trợ sức khỏe tim mạch và tăng cường hệ miễn dịch.
+                    </p>
+                </a>
+
+                <a href="@Url.Action("ComGaKhoGung","TungLoaiSanPham")" class="san-pham" title="Xem Thêm">
+                    <img src="~/Content/Data/HinhAnh/SanPham/cơm gà kho gừng.jpg" alt="CGKG-img">
+                    <h3>
+                        <span>Cơm Gà Kho Gừng</span>
+                    </h3>
+                    <p>
+                        Cơm gà kho gừng là một món ăn ngon và bổ dưỡng. Gà cung cấp protein và các dưỡng chất cần thiết cho cơ thể, trong khi gừng mang lại lợi ích cho sức khỏe tiêu hóa và hệ miễn dịch.
+                        Món này cũng chứa cơm và các loại gia vị, tạo nên một bữa ăn giàu dinh dưỡng và hấp dẫn.
+                    </p>
+                </a>
+
+                <a href="@Url.Action("CanhRongBienThit","TungLoaiSanPham")" class="san-pham" title="Xem Thêm">
+                    <img src="~/Content/Data/HinhAnh/SanPham/canh rong biển thịt.jpg" alt="RBTB-img">
+                    <h3>
+                        <span>Canh Rong Biển Thịt</span>
+                    </h3>
+                    <p>
+                        Canh rong biển thịt bằm là một món canh ngon và bổ dưỡng. Rong biển cung cấp nhiều khoáng chất và dưỡng chất, thịt bằm đem lại nguồn protein.
+                        Món canh này giúp cung cấp dinh dưỡng, cân bằng dinh dưỡng và hỗ trợ sức khỏe tổng thể.
+                    </p>
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </article>
+</main>

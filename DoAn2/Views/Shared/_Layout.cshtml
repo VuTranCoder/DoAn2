@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="~/Content/Data/HinhAnh/icon.ico">
+    <title>Cơm Nhà Vũ Tuấn</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="~/Content/css/header.css">
+    <link rel="stylesheet" href="~/Content/css/main.css">
+    <link rel="stylesheet" href="~/Content/css/footer.css">
+
+
+    <!-- script -->
+    <script src="~/Scripts/js/header.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="@Url.Action("Index", "Home")" class="link-trangchu">
+                <img src="~/Content/Data/HinhAnh/142mancook2_100507.ico" alt="Logo" class="anh-logo">
+            </a>
+            <span class="ten-quan"> Cơm Nhà Vũ Tuấn </span>
+        </div>
+
+        <div id="quan-ly">
+            <form id="nut-tim-kiem" action="search.php" method="get">
+                <div class="tim-kiem-holder">
+                    <input type="text" class="tim-kiem" placeholder="Tìm kiếm">
+                </div>
+                <button type="submit" class="fa fa-search button" title="Tìm kiếm"></button>
+            </form>
+
+            <a href="@Url.Action("GioHang","GioHang")" class="fa fa-shopping-cart button" title="Giỏ hàng"></a>
+
+            <div class="user-dropdown">
+                @if (ViewBag.IsLoggedIn ?? false)
+                {
+                    <a href="@Url.Action("DangXuat", "DangNhap")" class="fa fa-sign-out button" title="Đăng xuất"></a>
+                }
+                else
+                {
+                    <a href="@Url.Action("DangNhap", "DangNhap")" class="fa fa-user button" title="Tài khoản"></a>
+
+                    <div class="user-dropdown-list">
+                        <a href="@Url.Action("DangNhap", "DangNhap")" class="button">Đăng Nhập</a>
+                        <a href="@Url.Action("DangKy", "DangKy")" class="button">Đăng Ký</a>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div id="gom-nhom" class="fa fa-bars button"></div>
+        <nav id="thanh-dieu-huong">
+            <a href="@Url.Content("~/Home")" class="button">Trang Chủ</a>
+            <a href="@Url.Action("GioiThieu", "GioiThieu")" class="button">Giới Thiệu</a>
+            <a href="@Url.Action("SanPham","SanPham")" class="button">Sản Phẩm</a>
+            <a href="@Url.Action("TinTuc","TinTuc")" class="button">Tin tức</a>
+            <a href="@Url.Action("LienHe","LienHe")" class="button">Liên Hệ</a>
+        </nav>
+
+        <div id="man-chan">
+            <div class="man-chan-trai"></div>
+            <div class="man-chan-phai"></div>
+        </div>
+    </header>
+    @RenderBody()
+
+    <footer>
+        <div class="footer-column">
+            <div class="footer-cong-dong">
+                <div class="ban-quyen">
+                    &copy; 2021 Bản quyền thuộc về Cơm Nhà Vũ Tuấn
+                </div>
+
+                <ul class="danh-sach-mang-xa-hoi">
+                    <li>
+                        <a href="" class="fa fa-facebook mang-xa-hoi" title="Facebook" style="--i: #4267B2;"></a>
+                    </li>
+                    <li>
+                        <a href="" class="fa fa-instagram mang-xa-hoi" title="Instagram" style="--i: #E1306C;"></a>
+                    </li>
+                    <li>
+                        <a href="" class="fa fa-twitter mang-xa-hoi" title="Twitter" style="--i: #1DA1F2;"></a>
+                    </li>
+                    <li>
+                        <a href="" class="fa fa-telegram mang-xa-hoi" title="Telegram" style="--i: #0088cc;"></a>
+                    </li>
+                    <li>
+                        <a href="" class="fa fa-youtube-play mang-xa-hoi" title="Youtube" style="--i: #FF0000;"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-thong-tin">
+                <div title="Địa chỉ">
+                    <span class="fa fa-map-marker"></span>
+                    <span class="footer-thong-tin-dia-chi"> 123/5/6/7 Đường 3/2 Quận Ninh Kiều, Cần Thơ</span>
+                </div>
+                <div title="Số điện thoại">
+                    <span class="fa fa-phone"></span>
+                    <span class="footer-thong-tin-std">0123456789</span>
+                </div>
+                <div title="Mail">
+                    <span class="fa fa-envelope"></span>
+                    <span class="footer-thong-tin-mail">ComVT@gmail.com</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" id="ve-dau-trang" class="fa fa-chevron-up" title="Về đầu trang"></a>
+    </footer>
+</body>
+
+</html>

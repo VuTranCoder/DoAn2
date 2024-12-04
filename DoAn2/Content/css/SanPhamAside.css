@@ -1,0 +1,52 @@
+/* desktop */
+@media screen and (min-width: 900px) {
+    aside .danh-sach-san-pham {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+    aside .danh-sach-san-pham {
+        justify-content: space-evenly;
+    }
+}
+
+aside {
+    height: fit-content;
+    margin: 5px;
+    border: 1px solid var(--mau-vien);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+aside h1 {
+    margin: 10px;
+    text-align: center;
+}
+aside .danh-sach-san-pham {
+    display: flex;
+}
+
+aside .danh-sach-san-pham h4 {
+    margin: 0px;
+    margin-top: 10px;
+}
+
+aside .danh-sach-san-pham ul {
+    margin: 0px;
+    padding-left: 20px;
+}
+
+aside .danh-sach-san-pham ul li a {
+    font-size: smaller;
+    color: var(--mau-vien);
+}
+
+aside .danh-sach-san-pham ul li a:hover {
+    font-size: smaller;
+    color: var(--mau-nen);
+    text-decoration: underline solid;
+}

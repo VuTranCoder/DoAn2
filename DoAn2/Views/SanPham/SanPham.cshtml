@@ -1,0 +1,293 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <link rel="stylesheet" href="~/Content/css/SanPham.css">
+    <link rel="stylesheet" href="~/Content/css/SanPhamAside.css">
+    <link rel="stylesheet" href="~/Content/css/CacLoaiSanPham.css">
+    <link rel="stylesheet" href="~/Content/css/DanhGiaSanPham.css">
+
+    <aside>
+        <h1>
+            <span>Danh sách các loại sản phẩm</span>
+        </h1>
+        <div class="danh-sach-san-pham">
+            <div class="loai-san-pham">
+                <h4>
+                    <span>Cơm Heo Quay</span>
+                </h4>
+                <ul>
+                    <li> <a href="@Url.Action("ComHeoQuay","TungLoaiSanPham")">Cơm Heo Quay</a> </li>
+                    <li> <a href="@Url.Action("ComChienHeoQuay","TungLoaiSanPham")">Cơm Chiên Heo Quay</a> </li>
+                    <li> <a href="@Url.Action("ComHeoQuayDuaCai","TungLoaiSanPham")">Cơm Heo Quay Dưa Cải</a> </li>
+                    <li> <a href="@Url.Action("ComXaXiuTTN","TungLoaiSanPham")">Cơm Xá Xíu Thập Tam Nương</a> </li>
+                    <li> <a href="@Url.Action("ComGaKhoGung","TungLoaiSanPham")">Cơm Gà Kho Gừng</a> </li>
+                </ul>
+            </div>
+            <div class="loai-san-pham">
+                <h4>
+                    <span>Cơm Bò</span>
+                </h4>
+                <ul>
+                    <li> <a href="@Url.Action("BoSotTieuDen","TungLoaiSanPham")">Cơm Bò Sốt Tiêu Đen</a> </li>
+                    <li> <a href="@Url.Action("BoXaoBongHe","TungLoaiSanPham")">Cơm Bò Xào Bông Hẹ</a> </li>
+                    <li> <a href="@Url.Action("BoXaoDauRong","TungLoaiSanPham")">Cơm Bò Xào Đậu Rồng</a> </li>
+                    <li> <a href="@Url.Action("BoXaoKhoQua","TungLoaiSanPham")">Cơm Bò Xào Khổ Qua</a> </li>
+                    <li> <a href="@Url.Action("BoXaoOtChuong","TungLoaiSanPham")">Cơm Bò Xào Ớt Chuông</a> </li>
+                </ul>
+            </div>
+            <div class="loai-san-pham">
+                <h4>
+                    <span>Món Phụ</span>
+                </h4>
+                <ul>
+                    <li> <a href="@Url.Action("CanhCaiNgotThit","TungLoaiSanPham")">Canh Cải Ngọt Thịt</a> </li>
+                    <li> <a href="@Url.Action("CanhRongBienThit","TungLoaiSanPham")">Canh Rong Biển Thịt</a> </li>
+                    <li> <a href="@Url.Action("KhoQuaXaoTrung","TungLoaiSanPham")">Khổ Qua Xào Trứng</a> </li>
+                    <li> <a href="@Url.Action("TrungQuay","TungLoaiSanPham")">Trứng Quậy</a> </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <section>
+        <article>
+            <div id="ComHeoQuay" class="loai-san-pham">
+                <h1 class="tieu-de">
+                    <span>Cơm Heo Quay</span>
+                </h1>
+                <div class="cac-san-pham">
+                    <div class="san-pham" title="Cơm heo quay">
+                        <h3>
+                            <span>Cơm Heo Quay</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/Cơm Heo Quay.jpg" alt="ComHeoQuay-img">
+                        <h4 class="gia">35.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("ComHeoQuay","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Cơm chiên heo quay">
+                        <h3>
+                            <span>Cơm Chiên Heo Quay</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/Cơm Chiên Heo Quay.jpg" alt="ComChienHeoQuay-img">
+                        <h4 class="gia">35.000đ</h4>
+                        <div class="cac-nut">
+                             <a href="@Url.Action("ComChienHeoQuay","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Cơm heo quay dưa cải">
+                        <h3>
+                            <span>Cơm Heo Quay Dưa Cải</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/HeoQuayDuaCai.jpg" alt="HeoQuayDuaCai-img">
+                        <h4 class="gia">35.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("ComHeoQuayDuaCai","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Cơm xá xíu thập nương">
+                        <h3>
+                            <span>Cơm Xá Xíu Thập Tam Nương</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/xá xíu thập nương.jpg" alt="ComXaXiuTTN-img">
+                        <h4 class="gia">35.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("ComXaXiuTTN","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Cơm gà kho gừng">
+                        <h3>
+                            <span>Cơm Gà Kho Gừng</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/cơm gà kho gừng.jpg" alt="ComGaKhoGung-img">
+                        <h4 class="gia">45.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("ComGaKhoGung","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <div id="ComBo" class="loai-san-pham">
+                <h1 class="tieu-de">
+                    <span>Cơm Bò</span>
+                </h1>
+                <div class="cac-san-pham">
+                    <div class="san-pham" title="Cơm bò sốt tiêu đen">
+                        <h3>
+                            <span>Cơm Bò Sốt Tiêu Đen</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/bò sốt tiêu đen.jpg" alt="ComBoSotTieuDen-img">
+                        <h4 class="gia">45.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("BoSotTieuDen","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="san-pham" title="Cơm bò xào bông hẹ">
+                        <h3>
+                            <span>Cơm Bò Xào Bông Hẹ</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/bò xào bông hẹ.jpg" alt="ComBoXaoBongHe-img">
+                        <h4 class="gia">45.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("BoXaoBongHe","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Cơm bò xào đậu rồng">
+                        <h3>
+                            <span>Cơm Bò Xào Đậu Rồng</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/bò xào đậu rồng.jpg" alt="ComBoXaoDauRong-img">
+                        <h4 class="gia">45.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("BoXaoDauRong","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Cơm bò xào ớt chuông">
+                        <h3>
+                            <span>Cơm Bò Xào Ớt Chuông</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/bò xào ớt chuông.jpg" alt="ComBoXaoOtChuong-img">
+                        <h4 class="gia">45.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("BoXaoOtChuong","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Cơm bò xào khổ qua">
+                        <h3>
+                            <span>Cơm Bò Xào Khổ Qua</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/bò xào khổ qua.jpg" alt="ComBoXaoKhoQua-img">
+                        <h4 class="gia">45.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("BoXaoKhoQua","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <div id="MonPhu" class="loai-san-pham">
+                <h1 class="tieu-de">
+                    <span>Món Phụ</span>
+                </h1>
+                <div class="cac-san-pham">
+                    <div class="san-pham" title="Canh cải ngọt thịt">
+                        <h3>
+                            <span>Canh Cải Ngọt Thịt</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/canh cải ngọt thịt.jpg" alt="CanhCaiNgotThit-img">
+                        <h4 class="gia">20.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("CanhCaiNgotThit","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Canh rong biển thịt">
+                        <h3>
+                            <span>Canh Rong Biển Thịt</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/canh rong biển thịt.jpg" alt="CảnhongBienThit-img">
+                        <h4 class="gia">20.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("CanhRongBienThit","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Khổ qua xào trứng">
+                        <h3>
+                            <span>Khổ Qua Xào Trứng</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/trứng xào khổ qua.jpg" alt="TrungXaoKhoQua-img">
+                        <h4 class="gia">15.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("KhoQuaXaoTrung","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="san-pham" title="Trứng quậy">
+                        <h3>
+                            <span>Trứng Quậy</span>
+                        </h3>
+                        <img src="~/Content/Data/HinhAnh/SanPham/trứng quậy.jpg" alt="TrungQuay-img">
+                        <h4 class="gia">15.000đ</h4>
+                        <div class="cac-nut">
+                            <a href="@Url.Action("TrungQuay","TungLoaiSanPham")" class="them-thong-tin button"
+                               title="Thông tin sản phẩm">
+                                <span class="fa fa-info"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <div class="danh-gia-san-pham">
+        <a href="@Url.Action("DanhGiavaGopY", "DanhGiavaGopY")" class="danh-gia">
+            <h4>Đánh giá sản phẩm của chúng tôi</h4>
+            <p>
+                Sản phẩm của chúng tôi có làm cho bạn hài lòng, Chúng tôi rất vui lòng để lắng nghe ý kiến đóng góp
+                của bạn.
+            </p>
+        </a>
+    </div>
+
+
+</main>
+

@@ -1,0 +1,127 @@
+@media screen and (min-width: 900px){
+    .san-pham-chinh {
+        width: 85%;
+    }
+    .san-pham-chinh #welcome.anh-lien-ket h1{
+        font-size: 2.3em;
+    }
+    .san-pham-chinh #carousel .title-text {
+        position: absolute;
+    
+        color: antiquewhite;
+        text-transform: uppercase;
+        line-height: 45px;
+        letter-spacing: 3px;
+        overflow: hidden;
+        opacity: 0;
+    
+        animation: fade-in 2s ease-in 1s forwards;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px){
+    .san-pham-chinh {
+        width: 100%;
+    }
+    .san-pham-chinh #welcome.anh-lien-ket h1{
+        font-size: 1.5em;
+    }
+    .san-pham-chinh #carousel .title-text {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+
+        overflow: hidden;
+        opacity: 0;
+    }
+}
+.san-pham-chinh {
+    position: relative;
+}
+
+.san-pham-chinh .nut-chuyen-anh #nut-chuyen-trai,
+.san-pham-chinh .nut-chuyen-anh #nut-chuyen-phai {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+
+    color: var(--mau-chu);
+    background-color: #53382c55;
+
+    transition: .2s;
+}
+.san-pham-chinh .nut-chuyen-anh #nut-chuyen-trai:hover,
+.san-pham-chinh .nut-chuyen-anh #nut-chuyen-phai:hover {
+    color: var(--mau-nen);
+    background-color: #ccc8;
+}
+.san-pham-chinh .nut-chuyen-anh #nut-chuyen-trai.button,
+.san-pham-chinh .nut-chuyen-anh #nut-chuyen-phai.button {
+    min-width: 20px;
+    min-height: 40px;
+    width: 3%;
+    height: 10%;
+}
+.san-pham-chinh .nut-chuyen-anh #nut-chuyen-trai{
+    left: 5%;
+}
+.san-pham-chinh .nut-chuyen-anh #nut-chuyen-phai{
+    right: 5%;
+}
+.san-pham-chinh #carousel{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    
+    margin: 10px;
+    border: 1px solid var(--mau-vien);
+    padding: 0%;
+    box-sizing: border-box;
+
+    background-color: #53382c55;
+    
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+.san-pham-chinh #carousel .anh-lien-ket {
+    min-width: 100%;
+    position: relative;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    scroll-snap-align: start;
+}
+
+.san-pham-chinh #carousel .anh-lien-ket img {
+    width: 100%;
+
+    box-shadow:3px 4px 5px black;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.title-text.border-left {
+    border-left: 5px solid #ccc;
+    padding-left: 3px;
+    box-sizing: border-box;
+
+    text-align: left;
+}
+
+.title-text.border-right {
+    border-right: 5px solid #ccc;
+    padding-right: 3px;
+    box-sizing: border-box;
+
+    text-align: right;
+}

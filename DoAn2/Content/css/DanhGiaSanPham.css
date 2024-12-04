@@ -1,0 +1,35 @@
+.danh-gia-san-pham {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 10px;
+    
+}
+
+.danh-gia-san-pham .danh-gia {
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: #53382c33;
+}
+
+.danh-gia-san-pham .danh-gia:hover {
+    background-color: #53382c44;
+}
+
+.danh-gia-san-pham .danh-gia h4 {
+    margin: 10px 0px;
+
+    color: var(--mau-vien);
+}
+
+.danh-gia-san-pham .danh-gia p {
+    margin: 5px 0px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+
+    color: var(--mau-nen);
+    font-size: smaller;
+    font-style: oblique;
+}

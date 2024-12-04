@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DoAn2.Model.NHAN_VIEN>
+
+@{
+    ViewBag.Title = "DanhMucNhanVien";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Danh Mục Nhân Viên</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ThemNhanVienMoi")
+</p>
+<table class="table">
+    <tr class="table-warning">
+        <th>
+            Mã Nhân Viên
+        </th>
+        <th>
+            ID  Tài Khoản
+        </th>
+        <th>
+            Tên Nhân Viên
+        </th>
+        <th>
+            Ngày Sinh
+        </th>
+        <th>
+            Địa Chỉ
+        </th>
+        <th>
+           Ngày Vào Làm
+        </th>
+        <th>
+           Số Điện Thoại
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="table-success">
+        <td>
+            @Html.DisplayFor(modelItem => item.MA_NV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_TK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TEN_NV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYSINH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIACHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYVAOLAM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaNhanVien", new { maNV = item.MA_NV }) |
+            @Html.ActionLink("Chi tiết", "ChiTietNhanVien", new { id = item.MA_NV }) |
+            @using (Html.BeginForm("XoaNhanVien", "HomeAdmin", FormMethod.Post, new { @class = "form-inline" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("maNV", item.MA_NV)
+                <input type="submit" value="Xóa" class="btn btn-danger" />
+            }
+        </td>
+    </tr>
+}
+
+</table>

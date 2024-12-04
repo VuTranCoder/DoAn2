@@ -1,0 +1,243 @@
+/* desktop */
+@media screen and (min-width: 900px) {
+    header #thanh-dieu-huong .button {
+        min-width: 110px;
+        margin: 2px 0px;
+    }
+    header #thanh-dieu-huong.show { /*  hien thi danh sach navbar */
+        height: 40px;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+    header .logo .ten-quan {
+        position: absolute;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+
+    header #thanh-dieu-huong .button {
+        width: 100%;
+        margin: 2px 0px;
+    }
+    header #thanh-dieu-huong.show { /*  hien thi danh sach navbar */
+        height: calc(44px * 5);
+    }
+}
+
+header {
+    grid-area: header-cell;
+
+    margin: 2px 0px;
+    border: 1px solid var(--mau-vien);
+}
+
+/* logo */
+header .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+header .logo .link-trangchu {
+    max-width: 200px;
+    width: 20%;
+}
+header .logo .link-trangchu .anh-logo {
+    width: 100%;
+
+    transform:scale(0);
+    animation-name: logo;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0.7s;
+    animation-fill-mode: forwards;
+}
+header .logo .ten-quan {
+    margin: 10px;
+
+    transform:scale(0);
+    animation-name: logo;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0.7s;
+
+    animation-fill-mode: forwards;
+    font-size: xx-large;
+    text-transform: uppercase;
+}
+    
+@keyframes logo{
+    0%{
+        display:none;
+    }
+    1%{
+        transform:scale(0);
+    }
+    45%{
+        transform:scale(1.3);
+    }
+    75%{
+        transform:scale(0.9);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+/* navbar */
+header #gom-nhom {
+    position: relative;
+    z-index: 10;
+    margin: 20px;
+}
+header #thanh-dieu-huong { /* danh sach navbar */
+    height: 0px;
+    display: block;
+
+    transform: scale(0);
+    transform-origin: top left;
+    opacity: 0;
+    transition: .6s;
+}
+header #thanh-dieu-huong.show { /*  hien thi danh sach navbar */
+    margin: 20px;
+    margin-top: 0px;
+    box-sizing: border-box;
+    
+    transform: scale(1);
+    
+    opacity: 1;
+}
+
+/* tim kiem, gio hang, nguoi dung */
+header #quan-ly {
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+
+    margin: 20px;
+}
+
+/* tim kiem */
+header #quan-ly #nut-tim-kiem {
+    display: flex;
+}
+header #quan-ly #nut-tim-kiem .tim-kiem-holder{
+    width: 20vw;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+header #quan-ly .tim-kiem {
+    width: 100%;
+    height: 38px;
+
+    position: absolute;
+    right: -100%;
+    z-index: 20;
+
+    border: solid 1px var(--mau-vien);
+    padding: 5px;
+    box-sizing: border-box;
+
+    background-color: #cccccc33;
+
+    transition: 0.3s;
+}
+header #quan-ly #nut-tim-kiem:hover .tim-kiem {
+    right: 0px;
+}
+
+header #quan-ly #nut-tim-kiem .button{
+    background-color: transparent;
+}
+header #quan-ly #nut-tim-kiem .button:hover {
+    color: var(--mau-chu);
+    background-color: var(--mau-nen);
+}
+
+
+/* droplist nút người dùng */
+header #quan-ly .user-dropdown {
+    position: relative;
+}
+
+header #quan-ly .user-dropdown:hover .user-dropdown-list {
+    transform: scale(1);
+    opacity: 1;
+}
+
+header #quan-ly .user-dropdown-list {
+    position: absolute;
+    z-index: 20;
+    right: 0px;
+
+    margin-right: 3px;
+    border: solid 1px var(--mau-vien);
+    padding: 5px;
+    box-sizing: border-box;
+
+    background-color: #cccccccc;
+
+    transform: scale(0);
+    transform-origin: top right;
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+header #quan-ly .user-dropdown-list .button {
+    width: 130px;
+    margin: 2px 0px;
+}
+
+
+
+/* hiệu ứng mở cửa */
+.man-chan-trai,
+.man-chan-phai {
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+
+    background-color: var(--mau-nen);
+}
+
+.man-chan-trai {
+    left: 0px;
+
+    animation: QuaTrai .5s ease-in forwards .5s;
+}
+
+.man-chan-phai {
+    right: 0px;
+
+    animation: QuaPhai .5s ease-in forwards .5s;
+}
+
+@keyframes QuaTrai {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: -50vw;
+    }
+}
+
+@keyframes QuaPhai {
+    from {
+        right: 0px;
+    }
+
+    to {
+        right: -50vw;
+    }
+}

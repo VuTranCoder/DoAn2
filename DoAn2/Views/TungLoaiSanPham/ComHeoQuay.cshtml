@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var product = ViewBag.Product as DoAn2.Model.SANPHAM;
+}
+<main>
+    <link href="~/Content/css/TungLoaiSanPham.css" rel="stylesheet" />
+    <link href="~/Content/css/TungLoaiSanPhamArticle.css" rel="stylesheet" />
+    <article>
+        <div class="san-pham">
+            <h1 class="tieu-de">
+                <span>@product.TEN_SP</span>
+            </h1>
+
+            <div class="bai-viet">
+                <img class="anh-minh-hoa" src="~/Content/Data/HinhAnh/SanPham/Cơm Heo Quay.jpg" alt="ComHeoQuay-img"
+                     title="Cơm Heo Quay">
+
+                <div class="noi-dung">
+                    <p>
+                        Cơm heo quay là một món ăn ngon và bổ dưỡng. Heo quay cung cấp protein và chất béo, trong khi cơm cung cấp năng lượng từ gạo. Món này thường được kết hợp với rau củ và các loại gia vị, tạo ra một bữa ăn đa dạng và cung cấp các dưỡng chất cần thiết cho cơ thể
+                    </p>
+                    <p>
+                        Giá: @String.Format("{0:N0} VND", product.GIAMON)
+                    </p>
+                    <div id="form-dat-hang">
+                        <h2 class="form-title">
+                            Đặt hàng ngay
+                        </h2>
+
+                        @using (Html.BeginForm("AddToCart", "TungLoaiSanPham", FormMethod.Post))
+                        {
+                            @Html.Hidden("productName", product.TEN_SP)
+                            @Html.Hidden("price", product.GIAMON)
+                            <div class="soluong">
+                                <label for="soluong">Số lượng: </label>
+                                <input type="number" name="quantity" id="soluong" value="1" min="1" max="100">
+                            </div>
+                            <button type="submit" id="dat-hang" class="button">
+                                Đặt hàng
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ve-trang-san-pham">
+            <a href="@Url.Action("SanPham","SanPham")">
+                Xem thêm sản phẩm khác...
+            </a>
+        </div>
+    </article>
+
+    <aside>
+    </aside>
+</main>
+
+

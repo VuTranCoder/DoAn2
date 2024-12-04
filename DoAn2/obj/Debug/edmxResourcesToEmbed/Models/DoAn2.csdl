@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DoAn2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CTDH">
+    <Key>
+      <PropertyRef Name="MA_SP" />
+      <PropertyRef Name="MA_DH" />
+    </Key>
+    <Property Name="MA_SP" Type="Int32" Nullable="false" />
+    <Property Name="MA_DH" Type="Int32" Nullable="false" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="TEN_MON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DON_DAT_HANG" Relationship="Self.FK_CTDH_RELATIONS_DON_DAT_" FromRole="CTDH" ToRole="DON_DAT_HANG" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK_CTDH_RELATIONS_SANPHAM" FromRole="CTDH" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="DON_DAT_HANG">
+    <Key>
+      <PropertyRef Name="MA_DH" />
+    </Key>
+    <Property Name="MA_DH" Type="Int32" Nullable="false" />
+    <Property Name="MA_KH" Type="Int32" Nullable="false" />
+    <Property Name="MA_NV" Type="Int32" Nullable="false" />
+    <Property Name="DIACHIGIAOHANG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NGAY_GIODAT" Type="DateTime" Precision="3" />
+    <Property Name="TRANGTHAI_DH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PT_THANHTOAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_RELATIONS_DON_DAT_" FromRole="DON_DAT_HANG" ToRole="CTDH" />
+    <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK_DON_DAT__RELATIONS_KHACH_HA" FromRole="DON_DAT_HANG" ToRole="KHACH_HANG" />
+    <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK_DON_DAT__RELATIONS_NHAN_VIE" FromRole="DON_DAT_HANG" ToRole="NHAN_VIEN" />
+    <Property Name="ShippingFee" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="GOP_Y">
+    <Key>
+      <PropertyRef Name="MA_GOPY" />
+    </Key>
+    <Property Name="MA_GOPY" Type="Int32" Nullable="false" />
+    <Property Name="MA_KH" Type="Int32" Nullable="false" />
+    <Property Name="NOIDUNG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK_GOP_Y_RELATIONS_KHACH_HA" FromRole="GOP_Y" ToRole="KHACH_HANG" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="MA_KH" />
+    </Key>
+    <Property Name="MA_KH" Type="Int32" Nullable="false" />
+    <Property Name="ID_TK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_KH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="Int32" />
+    <Property Name="DIACHI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DON_DAT_HANG" Relationship="Self.FK_DON_DAT__RELATIONS_KHACH_HA" FromRole="KHACH_HANG" ToRole="DON_DAT_HANG" />
+    <NavigationProperty Name="GOP_Y" Relationship="Self.FK_GOP_Y_RELATIONS_KHACH_HA" FromRole="KHACH_HANG" ToRole="GOP_Y" />
+    <NavigationProperty Name="TAI_KHOAN" Relationship="Self.FK_KHACH_HA_RELATIONS_TAI_KHOA" FromRole="KHACH_HANG" ToRole="TAI_KHOAN" />
+  </EntityType>
+  <EntityType Name="LOAI_MONAN">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+    </Key>
+    <Property Name="MALOAI" Type="Int32" Nullable="false" />
+    <Property Name="TENLOAI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK_SANPHAM_RELATIONS_LOAI_MON" FromRole="LOAI_MONAN" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="MA_NV" />
+    </Key>
+    <Property Name="MA_NV" Type="Int32" Nullable="false" />
+    <Property Name="ID_TK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_NV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+    <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYVAOLAM" Type="DateTime" Precision="3" />
+    <Property Name="SDT" Type="Int32" />
+    <NavigationProperty Name="DON_DAT_HANG" Relationship="Self.FK_DON_DAT__RELATIONS_NHAN_VIE" FromRole="NHAN_VIEN" ToRole="DON_DAT_HANG" />
+    <NavigationProperty Name="TAI_KHOAN" Relationship="Self.FK_NHAN_VIE_RELATIONS_TAI_KHOA" FromRole="NHAN_VIEN" ToRole="TAI_KHOAN" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MA_SP" />
+    </Key>
+    <Property Name="MA_SP" Type="Int32" Nullable="false" />
+    <Property Name="MALOAI" Type="Int32" Nullable="false" />
+    <Property Name="TEN_SP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GIAMON" Type="Int32" />
+    <Property Name="HINHANH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_RELATIONS_SANPHAM" FromRole="SANPHAM" ToRole="CTDH" />
+    <NavigationProperty Name="LOAI_MONAN" Relationship="Self.FK_SANPHAM_RELATIONS_LOAI_MON" FromRole="SANPHAM" ToRole="LOAI_MONAN" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TAI_KHOAN">
+    <Key>
+      <PropertyRef Name="ID_TK" />
+    </Key>
+    <Property Name="ID_TK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_TK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK_KHACH_HA_RELATIONS_TAI_KHOA" FromRole="TAI_KHOAN" ToRole="KHACH_HANG" />
+    <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK_NHAN_VIE_RELATIONS_TAI_KHOA" FromRole="TAI_KHOAN" ToRole="NHAN_VIEN" />
+  </EntityType>
+  <Association Name="FK_CTDH_RELATIONS_DON_DAT_">
+    <End Role="DON_DAT_HANG" Type="Self.DON_DAT_HANG" Multiplicity="1" />
+    <End Role="CTDH" Type="Self.CTDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DON_DAT_HANG">
+        <PropertyRef Name="MA_DH" />
+      </Principal>
+      <Dependent Role="CTDH">
+        <PropertyRef Name="MA_DH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDH_RELATIONS_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="CTDH" Type="Self.CTDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MA_SP" />
+      </Principal>
+      <Dependent Role="CTDH">
+        <PropertyRef Name="MA_SP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DON_DAT__RELATIONS_KHACH_HA">
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
+    <End Role="DON_DAT_HANG" Type="Self.DON_DAT_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_HANG">
+        <PropertyRef Name="MA_KH" />
+      </Principal>
+      <Dependent Role="DON_DAT_HANG">
+        <PropertyRef Name="MA_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DON_DAT__RELATIONS_NHAN_VIE">
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+    <End Role="DON_DAT_HANG" Type="Self.DON_DAT_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAN_VIEN">
+        <PropertyRef Name="MA_NV" />
+      </Principal>
+      <Dependent Role="DON_DAT_HANG">
+        <PropertyRef Name="MA_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GOP_Y_RELATIONS_KHACH_HA">
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
+    <End Role="GOP_Y" Type="Self.GOP_Y" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_HANG">
+        <PropertyRef Name="MA_KH" />
+      </Principal>
+      <Dependent Role="GOP_Y">
+        <PropertyRef Name="MA_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACH_HA_RELATIONS_TAI_KHOA">
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="1" />
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAI_KHOAN">
+        <PropertyRef Name="ID_TK" />
+      </Principal>
+      <Dependent Role="KHACH_HANG">
+        <PropertyRef Name="ID_TK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_RELATIONS_LOAI_MON">
+    <End Role="LOAI_MONAN" Type="Self.LOAI_MONAN" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAI_MONAN">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MALOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHAN_VIE_RELATIONS_TAI_KHOA">
+    <End Role="TAI_KHOAN" Type="Self.TAI_KHOAN" Multiplicity="1" />
+    <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAI_KHOAN">
+        <PropertyRef Name="ID_TK" />
+      </Principal>
+      <Dependent Role="NHAN_VIEN">
+        <PropertyRef Name="ID_TK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DoAn2Entities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTDHs" EntityType="Self.CTDH" />
+    <EntitySet Name="DON_DAT_HANG" EntityType="Self.DON_DAT_HANG" />
+    <EntitySet Name="GOP_Y" EntityType="Self.GOP_Y" />
+    <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" />
+    <EntitySet Name="LOAI_MONAN" EntityType="Self.LOAI_MONAN" />
+    <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" />
+    <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TAI_KHOAN" EntityType="Self.TAI_KHOAN" />
+    <AssociationSet Name="FK_CTDH_RELATIONS_DON_DAT_" Association="Self.FK_CTDH_RELATIONS_DON_DAT_">
+      <End Role="DON_DAT_HANG" EntitySet="DON_DAT_HANG" />
+      <End Role="CTDH" EntitySet="CTDHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDH_RELATIONS_SANPHAM" Association="Self.FK_CTDH_RELATIONS_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="CTDH" EntitySet="CTDHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DON_DAT__RELATIONS_KHACH_HA" Association="Self.FK_DON_DAT__RELATIONS_KHACH_HA">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="DON_DAT_HANG" EntitySet="DON_DAT_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DON_DAT__RELATIONS_NHAN_VIE" Association="Self.FK_DON_DAT__RELATIONS_NHAN_VIE">
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+      <End Role="DON_DAT_HANG" EntitySet="DON_DAT_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GOP_Y_RELATIONS_KHACH_HA" Association="Self.FK_GOP_Y_RELATIONS_KHACH_HA">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="GOP_Y" EntitySet="GOP_Y" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACH_HA_RELATIONS_TAI_KHOA" Association="Self.FK_KHACH_HA_RELATIONS_TAI_KHOA">
+      <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_RELATIONS_LOAI_MON" Association="Self.FK_SANPHAM_RELATIONS_LOAI_MON">
+      <End Role="LOAI_MONAN" EntitySet="LOAI_MONAN" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHAN_VIE_RELATIONS_TAI_KHOA" Association="Self.FK_NHAN_VIE_RELATIONS_TAI_KHOA">
+      <End Role="TAI_KHOAN" EntitySet="TAI_KHOAN" />
+      <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DoAn2.Model.DON_DAT_HANG>
+@{
+    ViewBag.Title = "Danh sách đơn đặt hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<h2>Danh sách đơn đặt hàng</h2>
+
+<table class="table">
+    <thead>
+        <tr class="table-active">
+            <th>Mã Đơn Hàng</th>
+            <th>Khách hàng</th>
+            <th>Ngày đặt</th>
+            <th>Địa chỉ giao hàng</th>
+            <th>Phương thức thanh toán</th>
+            <th>Trạng thái</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr class="table-bordered">
+                <td>@order.MA_DH</td>
+                <td>@order.KHACH_HANG.TEN_KH</td>
+                <td>@order.NGAY_GIODAT</td>
+                <td>@order.KHACH_HANG.DIACHI</td>
+                <td>@order.PT_THANHTOAN</td>
+                <td>@order.TRANGTHAI_DH</td>
+                <td>
+                    @Html.ActionLink("Xem", "ChiTietDatHang", new { id = order.MA_DH }) |
+                    @Html.ActionLink("Sửa", "SuaDonDatHang", new { id = order.MA_DH }) |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

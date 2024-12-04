@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <script src="~/Scripts/js/LienHe.js"></script>
+    <link href="~/Content/css/LienHe.css" rel="stylesheet" />
+    <fieldset class="thongtinlienhe">
+        <legend>Thông Tin Liên Hệ Với Chúng Tôi</legend>
+        <div>
+            <ul>
+                <li>Email: <em>ComVT@gmail.com</em></li>
+                <li>Số điện thoại: <em>0123456789</em></li>
+                <li>Địa chỉ: <em>123/5/6/7 Đường 3/2 Quận Ninh Kiều, Cần Thơ</em></li>
+            </ul>
+        </div>
+    </fieldset>
+    <ul>
+        <li class="loinhan"><em><ins>Để có thể trao đổi công việc thuận tiện hơn bạn có thể hẹn gặp trực tiếp chúng tôi.</ins></em></li>
+    </ul>
+    <fieldset class="hen">
+        <legend>Đặt Lịch Hẹn</legend>
+        <ul>
+            <li>Chọn ngày</li>
+        </ul>
+        <div class="chonngay">
+            <form action="login.php" method="post" name="lichhen" onsubmit="return kiemtra();" id="lichhen">
+                <div class="nam">
+                    <button type="button" onclick="anchonnam(1);"><</button>
+                    <input type="button" id="nam" value="0">
+                    <button type="button" onclick="anchonnam(2);">></button>
+                    <input type="radio" value="0" id="ipnam" name="inputnam">
+                </div>
+                <div class="thang">
+                    <button type="button" id="thang1" onclick="anchonthang(1);">Tháng 1</button>
+                    <button type="button" id="thang2" onclick="anchonthang(2);">Tháng 2</button>
+                    <button type="button" id="thang3" onclick="anchonthang(3);">Tháng 3</button>
+                    <button type="button" id="thang4" onclick="anchonthang(4);">Tháng 4</button>
+                    <button type="button" id="thang5" onclick="anchonthang(5);">Tháng 5</button>
+                    <button type="button" id="thang6" onclick="anchonthang(6);">Tháng 6</button>
+                    <button type="button" id="thang7" onclick="anchonthang(7);">Tháng 7</button>
+                    <button type="button" id="thang8" onclick="anchonthang(8);">Tháng 8</button>
+                    <button type="button" id="thang9" onclick="anchonthang(9);">Tháng 9</button>
+                    <button type="button" id="thang10" onclick="anchonthang(10);">Tháng 10</button>
+                    <button type="button" id="thang11" onclick="anchonthang(11);">Tháng 11</button>
+                    <button type="button" id="thang12" onclick="anchonthang(12);">Tháng 12</button>
+                    <input type="radio" value="0" id="ipthang" name="inputthang">
+                </div>
+                <div class="ngay">
+                    <button type="button" id="1" onclick="anchonngay(1);">1</button>
+                    <button type="button" id="2" onclick="anchonngay(2);">2</button>
+                    <button type="button" id="3" onclick="anchonngay(3);">3</button>
+                    <button type="button" id="4" onclick="anchonngay(4);">4</button>
+                    <button type="button" id="5" onclick="anchonngay(5);">5</button>
+                    <button type="button" id="6" onclick="anchonngay(6);">6</button>
+                    <button type="button" id="7" onclick="anchonngay(7);">7</button>
+                    <br>
+                    <button type="button" id="8" onclick="anchonngay(8);">8</button>
+                    <button type="button" id="9" onclick="anchonngay(9);">9</button>
+                    <button type="button" id="10" onclick="anchonngay(10);">10</button>
+                    <button type="button" id="11" onclick="anchonngay(11);">11</button>
+                    <button type="button" id="12" onclick="anchonngay(12);">12</button>
+                    <button type="button" id="13" onclick="anchonngay(13);">13</button>
+                    <button type="button" id="14" onclick="anchonngay(14);">14</button>
+                    <br>
+                    <button type="button" id="15" onclick="anchonngay(15);">15</button>
+                    <button type="button" id="16" onclick="anchonngay(16);">16</button>
+                    <button type="button" id="17" onclick="anchonngay(17);">17</button>
+                    <button type="button" id="18" onclick="anchonngay(18);">18</button>
+                    <button type="button" id="19" onclick="anchonngay(19);">19</button>
+                    <button type="button" id="20" onclick="anchonngay(20);">20</button>
+                    <button type="button" id="21" onclick="anchonngay(21);">21</button>
+                    <br>
+                    <button type="button" id="22" onclick="anchonngay(22);">22</button>
+                    <button type="button" id="23" onclick="anchonngay(23);">23</button>
+                    <button type="button" id="24" onclick="anchonngay(24);">24</button>
+                    <button type="button" id="25" onclick="anchonngay(25);">25</button>
+                    <button type="button" id="26" onclick="anchonngay(26);">26</button>
+                    <button type="button" id="27" onclick="anchonngay(27);">27</button>
+                    <button type="button" id="28" onclick="anchonngay(28);">28</button>
+                    <br>
+                    <button type="button" id="29" onclick="anchonngay(29);">29</button>
+                    <button type="button" id="30" onclick="anchonngay(30);">30</button>
+                    <button type="button" id="31" onclick="anchonngay(31);">31</button>
+                    <input type="radio" value="0" id="ipngay" name="inputngay">
+                </div>
+            </form>
+            <div class="submit">
+                <input type="submit" value="Đặt lịch" onclick="datlich()" class="button" form="lichhen">
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="thoigian">
+        <legend>Thời Gian Làm Việc</legend>
+        <div class="thu">
+            <p>.Thứ 2-Thứ 7</p>
+            <p><em>7h-22h</em></p>
+        </div>
+        <div class="cn">
+            <p>.Chủ nhật-Ngày lễ</p>
+            <p><em>8h-23h</em></p>
+        </div>
+    </fieldset>
+</main>
+

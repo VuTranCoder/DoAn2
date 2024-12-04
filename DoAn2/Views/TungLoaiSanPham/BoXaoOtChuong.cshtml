@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+    var product = ViewBag.Product as DoAn2.Model.SANPHAM;
+}
+<main>
+    <link href="~/Content/css/TungLoaiSanPham.css" rel="stylesheet" />
+    <link href="~/Content/css/TungLoaiSanPhamArticle.css" rel="stylesheet" />
+    <article>
+        <div class="san-pham">
+            <h1 class="tieu-de">
+                <span>@product.TEN_SP</span>
+            </h1>
+
+            <div class="bai-viet">
+                <img class="anh-minh-hoa" src="~/Content/Data/HinhAnh/SanPham/bò xào ớt chuông.jpg" alt="BXOC-img"
+                     title="BoXaoOtChuong">
+
+                <div class="noi-dung">
+                    <p>
+                        Bò xào ớt chuông là một món ăn ngon và bổ dưỡng. Thịt bò cung cấp protein và các dưỡng chất cần thiết cho cơ thể, trong khi ớt chuông chứa nhiều vitamin và khoáng chất, đặc biệt là vitamin C. Món này không chỉ mang lại hương vị đậm đà mà còn giúp cung cấp năng lượng và hỗ trợ sức khỏe miễn dịch.
+                    </p>
+                    <p>
+                        Giá: @String.Format("{0:N0} VND", product.GIAMON)
+                    </p>
+                    <div id="form-dat-hang">
+                        <h2 class="form-title">
+                            Đặt hàng ngay
+                        </h2>
+                        @using (Html.BeginForm("AddToCart", "TungLoaiSanPham", FormMethod.Post))
+                        {
+                            @Html.Hidden("productName", product.TEN_SP)
+                            @Html.Hidden("price", product.GIAMON)
+                            <div class="soluong">
+                                <label for="soluong">Số lượng: </label>
+                                <input type="number" name="quantity" id="soluong" value="1" min="1" max="100">
+                            </div>
+                            <button type="submit" id="dat-hang" class="button">
+                                Đặt hàng
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ve-trang-san-pham">
+            <a href="@Url.Action("SanPham","SanPham")">
+                Xem thêm sản phẩm khác...
+            </a>
+        </div>
+    </article>
+
+    <aside>
+    </aside>
+</main>
+

@@ -1,0 +1,42 @@
+/* desktop */
+@media screen and (min-width: 900px){
+    article a {
+        width: 80%;
+    }
+
+    .imgsanpham{
+        grid-template-areas: "img img text";
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px){
+    article a {
+        width: 100%;
+    }
+    .imgsanpham{
+        grid-template-areas: "img" "text";
+    }
+}
+
+.imgsanpham{
+    grid-gap: 50px;
+    display: grid;
+}
+
+.tieude{
+    font-size: larger;
+    color: var(--mau-vien);
+}
+
+.imgsanpham img{
+    grid-area: img;
+}
+
+.imgsanpham p{
+    grid-area: text;
+}
+
+.articlesanpham{
+    width: 85%;
+}

@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (ViewBag.ErrorMessage != null)
+{
+    <div style="color:red;">@ViewBag.ErrorMessage</div>
+}
+<main>
+    <link href="~/Content/css/DangNhap.css" rel="stylesheet" />
+    <script src="~/Scripts/js/Dangnhap.js"></script>
+    <fieldset>
+        <legend>Login</legend>
+        <div class="login">
+            <form id="form" onsubmit="return frmValiDate(this);" action="@Url.Action("DangNhap", "DangNhap")" method="post">
+
+                <label for="email" class="fa fa-envelope-o label"></label>
+                <input id="email" name="email" type="text" class="input-block" placeholder="Vui lòng nhập Email " size="20">
+                <br>
+
+                <label for="password" class="fa fa-key label"></label>
+                <input id="password" type="password" name="password" class="input-block" placeholder="Vui lòng nhập Mật khẩu ">
+
+
+                <input type="checkbox" onclick="showPassWord();"><span style="font-size: 0.8em;">Show Password</span>
+                <br>
+                <span class="quen-mat-khau">
+                    Quên <a href="@Url.Action("QuenMatKhau", "QuenMatKhau")">Mật khẩu?</a>
+                    <br>
+                    <input type="checkbox" name="remenber-login">
+                    Ghi nhớ đăng nhập
+
+                </span>
+                <div id="chua-co-tk">Bạn chưa có Tài khoản?<a href="@Url.Action("DangKy", "DangKy")">Đăng ký</a></div>
+                <br>
+                <input type="submit" class="button" herf="" value="Đăng nhập">
+                <input type="reset" class="button" herf="" value="Reset">
+            </form>
+        </div>
+    </fieldset>
+</main>

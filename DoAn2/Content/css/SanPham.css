@@ -1,0 +1,69 @@
+/* desktop */
+@media screen and (min-width: 900px) {
+    main {
+        grid-template-areas: 
+            "aside-cell product-cell"
+            "aside-cell feedback-cell"
+        ;
+    }
+
+    aside {
+        width: 20vw;
+        
+    }
+    
+    section {
+        width: 75vw;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+    main {
+        grid-template-areas: 
+            "aside-cell" 
+            "product-cell"
+            "feedback-cell"
+        ;
+    }
+    section {
+        width: 97vw;
+    }
+}
+
+
+main {
+    display: grid;
+    
+    grid-gap: 10px;
+}
+
+aside {
+    grid-area: aside-cell;
+    
+}
+
+section {
+    grid-area: product-cell;
+}
+
+.danh-gia-san-pham {
+    grid-area: feedback-cell;
+}
+
+.loai-san-pham {
+    width: 90%;
+
+    margin: 5px;
+    border: 1px solid var(--mau-vien);
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: #53382c55;
+}
+
+.tieu-de {
+    font-size: xx-large;
+
+    margin: 12px;
+}

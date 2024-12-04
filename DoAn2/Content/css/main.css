@@ -1,0 +1,6 @@
+main {
+    grid-area: main-cell;
+
+    margin: 2px 0px;
+    border: 1px solid var(--mau-vien);
+}

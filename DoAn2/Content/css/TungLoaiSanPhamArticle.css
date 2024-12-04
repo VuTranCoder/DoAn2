@@ -1,0 +1,136 @@
+/* desktop */
+@media screen and (min-width: 900px) {
+    article .san-pham .bai-viet {
+        column-count: 2;
+    }
+
+    article .san-pham .bai-viet .noi-dung {
+        break-before: column;
+    }
+
+    article .san-pham {
+        width: 80%;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 900px) {
+    article .san-pham {
+        width: 70%;
+    }
+}
+
+
+
+article .san-pham .tieu-de {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+article .san-pham .bai-viet {
+    width: 100%;
+
+    border: 1px solid var(--mau-vien);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+article .san-pham .bai-viet .anh-minh-hoa {
+    width: 100%;
+    border: 2px solid var(--mau-vien);
+    box-sizing: border-box;
+}
+
+article .san-pham .bai-viet .noi-dung {
+    display: flex;
+    flex-direction: column;
+}
+
+article .san-pham .bai-viet .noi-dung p {
+    margin: 0;
+    border: 1px solid var(--mau-vien);
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: #71564a55;
+    text-align: justify;
+    font-weight: normal;
+}
+
+article .san-pham .bai-viet .noi-dung #form-dat-hang {
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px 0px;
+    border: 1px solid var(--mau-vien);
+    padding: 10px 10%;
+    box-sizing: border-box;
+
+    background-color: #71564a66;
+}
+
+article .san-pham .bai-viet .noi-dung #form-dat-hang .form-title {
+    margin: 10px;
+    color: var(--mau-nen);
+}
+
+article .san-pham .bai-viet .noi-dung #form-dat-hang .soluong {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+article .san-pham .bai-viet .noi-dung #form-dat-hang #soluong {
+    width: 40%;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+article .san-pham .bai-viet .noi-dung #form-dat-hang .gia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+article .san-pham .bai-viet .noi-dung #form-dat-hang #gia {
+    width: 40%;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+article .san-pham .bai-viet .noi-dung #form-dat-hang .dat-hang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+article .san-pham .bai-viet .noi-dung #form-dat-hang #dat-hang {
+    width: 100%;
+    margin: 0px;
+}
+
+
+
+article .ve-trang-san-pham {
+    width: 80%;
+
+    margin: 20px 0px;
+}
+
+article .ve-trang-san-pham a {
+    color: var(--mau-nen);
+}
+
+article .ve-trang-san-pham a:hover {
+    color: var(--mau-vien);
+}
